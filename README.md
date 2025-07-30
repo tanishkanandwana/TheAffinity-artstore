@@ -14,4 +14,4 @@ React • Tailwind CSS • Node.js • Express • MongoDB(atlas) • JWT
 ## 🌐 Live Links
 
 - **Frontend (Netlify)**: [celadon-florentine-b0fac0.netlify.app](https://celadon-florentine-b0fac0.netlify.app) 
-- ## **Backend API**: [theaffinity-artstore.onrender.com](https://theaffinity-artstore.onrender.com)
+
