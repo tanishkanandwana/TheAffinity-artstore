@@ -47,6 +47,11 @@ app.use("/api/v1/orders", Order);
 // });
 
 const PORT = process.env.PORT || 5000; // fallback for localhost
+
+app.get("/", (req, res) => {
+  res.send("✅ Backend is live and responding!");
+});
+
 app.listen(PORT, () => {
   console.log(`Server started at port ${PORT}`);
 });
