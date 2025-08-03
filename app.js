@@ -1,8 +1,21 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+
+const allowedOrigins = [
+  "https://celadon-florentine-b0fac0.netlify.app",
+  "https://stately-biscuit-b90e00.netlify.app"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
+
+
 app.use('/images', express.static('images'));
-app.use(cors());
+
 require("dotenv").config();
 require("./conn/conn");
 const user = require("./routes/user");
@@ -29,6 +42,11 @@ app.use("/api/v1/orders", Order);
 //     res.send("hello from backend side");
 // });
 //CREATING PORT
-app.listen(process.env.PORT, () =>{
-    console.log(`server started at port ${process.env.PORT}`);
+// app.listen(process.env.PORT, () =>{
+//     console.log(`server started at port ${process.env.PORT}`);
+// });
+
+const PORT = process.env.PORT || 5000; // fallback for localhost
+app.listen(PORT, () => {
+  console.log(`Server started at port ${PORT}`);
 });

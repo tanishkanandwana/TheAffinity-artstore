@@ -110,4 +110,63 @@ router.get("/get-art-by-id/:id", async (req, res) => {
     }
 });
 
+
+// Add review to an art
+router.post("/:id/review", authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.params; // art ID
+    const userId = req.headers.id;
+    const { rating, comment } = req.body;
+
+    const art = await Art.findById(id);
+    const user = await User.findById(userId);
+
+    if (!art || !user) {
+      return res.status(404).json({ message: "Art or User not found" });
+    }
+
+    // Check if already reviewed
+    const alreadyReviewed = art.reviews.find(
+      (rev) => rev.user.toString() === userId
+    );
+
+    if (alreadyReviewed) {
+      return res.status(400).json({ message: "You have already reviewed this art" });
+    }
+
+    const newReview = {
+      user: userId,
+      name: user.username,
+      rating: Number(rating),
+      comment,
+    };
+
+    art.reviews.push(newReview);
+    art.numReviews = art.reviews.length;
+    art.rating = art.reviews.reduce((acc, item) => item.rating + acc, 0) / art.reviews.length;
+
+    await art.save();
+    res.status(201).json({ message: "Review added successfully" });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+// Get all reviews for an art
+router.get("/:id/reviews", async (req, res) => {
+  try {
+    const art = await Art.findById(req.params.id);
+    if (!art) return res.status(404).json({ message: "Art not found" });
+
+    res.json(art.reviews);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+
+
 module.exports = router;
