@@ -68,4 +68,20 @@ router.patch("/confirm-option/:id", authenticateToken, async (req, res) => {
   }
 });
 
+// Get all custom requests (Admin only)
+router.get("/all", authenticateToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.headers.id);
+    if (!user || user.role !== "admin") {
+      return res.status(403).json({ message: "Access denied" });
+    }
+
+    const allRequests = await CustomRequest.find().sort({ createdAt: -1 }).populate("userId", "name email");
+    res.json(allRequests);
+  } catch (error) {
+    console.error("Error fetching all custom requests:", error);
+    res.status(500).json({ message: "Failed to fetch custom requests" });
+  }
+});
+
 module.exports = router;
