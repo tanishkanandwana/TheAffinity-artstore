@@ -39,7 +39,7 @@ const favourite = require("./routes/favourite");
 const Cart = require("./routes/cart");
 const Order = require("./routes/order");
 
-const customRequestRoutes = require("./routes/customRequest");
+const customRequestRoute = require("./routes/customRequest");
 // app.use(express.json());
 //routes
 // app.use("/api/v1", user);
@@ -52,7 +52,7 @@ app.use("/api/v1/arts", Arts);
 app.use("/api/v1/favourites", favourite);
 app.use("/api/v1/cart", Cart);
 app.use("/api/v1/orders", Order);
-app.use("/api/v1/custom-request", customRequestRoutes);
+app.use("/api/v1/custom-request", customRequestRoute);
 
 //
 // app.get("/", (req,res) =>{
