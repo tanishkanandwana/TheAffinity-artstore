@@ -6,3 +6,6 @@ backend/.env
 # Other sensitive/config files
 config.js
 secret.js
+
+
+backend/git-filter-repo/
