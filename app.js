@@ -4,8 +4,7 @@ const app = express();
 
 const allowedOrigins = [
   "https://celadon-florentine-b0fac0.netlify.app",
-  "https://stately-biscuit-b90e00.netlify.app",
-  "https://superb-concha-5e6d6d.netlify.app",
+  "https://fantastic-trifle-191817.netlify.app",
   "http://localhost:5173"
 ];
 
