@@ -81,6 +81,22 @@ router.get("/get-all-arts", async (req, res) => {
     }
 });
 
+// Get arts by category/type
+router.get("/get-arts-by-type/:type", async (req, res) => {
+  try {
+    const { type } = req.params;
+    const arts = await Art.find({ type }); // Exact match
+    return res.json({
+      status: "Success",
+      data: arts,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+
 //get recently added  arts limit to 4
 router.get("/get-recent-arts", async (req, res) => {
  try {
