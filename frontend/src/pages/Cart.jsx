@@ -63,7 +63,7 @@ const Cart = () => {
     {Cart && Cart.length === 0 && (
       <div className='h-screen'>
         <div className='h-[100%] flex items-center justify-center flex-col'style={{ fontFamily: "'Marcellus', serif" }}>
-          <h1 className='text-5xl lg:text-6xl font-semibold text-pink-600' style={{ fontFamily: "'Marcellus', serif" }}>Empty Cart</h1>
+          <h1 className='text-5xl lg:text-6xl font-semibold text-white' style={{ fontFamily: "'Marcellus', serif" }}>Empty Cart</h1>
           {/* <img 
           src={emptyCartImage }
            alt="empty cart"
