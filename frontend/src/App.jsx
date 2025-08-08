@@ -1,4 +1,19 @@
  import React, { useEffect } from 'react'
+import axios from 'axios';
+// Add interceptor here once, globally
+axios.interceptors.response.use(
+  response => response,
+  error => {
+    if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+      alert("Session expired. Please log in again.");
+      localStorage.clear();
+      window.location.href = "/login";
+    }
+    return Promise.reject(error);
+  }
+);
+
+
 import { Toaster } from 'react-hot-toast';
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Navbar";
@@ -59,33 +74,7 @@ const App = () => {
   <Route path="/custom-request" element={<CustomRequestForm />} />
 
    <Route  path ="/cart" element ={<Cart />}/>
-    {/* <Route  path ="/profile" element ={<Profile />}>
-
-     {role === "user" ? 
-     <Route index element={<Favourites />}/> : 
-       <Route index element={<AllOrders />}/>
-      
-
-       }
-
-
-<Route
-  path="add-art"
-  element={role === "admin" ? <Addnewcollec /> : <div>Not Authorized</div>}
-/>
-<Route
-  path="custom-requests"
-  element={role === "admin" ? <AllCustomRequests /> : <div>Not Authorized</div>}
-/>
-
-                    
-           <Route path="orderHistory" element={<UserOrderHistory />}/>
-                    <Route path="settings" element={<Settings />}/>
-                    <Route path="custom-requests" element={<CustomRequests />} />
-
-                    </Route> */}
-
-
+   
 
 <Route path="/profile" element={<Profile />}>
   {/* Default route based on role */}
@@ -135,7 +124,3 @@ const App = () => {
 export default App;
 
 
-
-       // {role === "admin" && (
-          //<Route path="add-art" element={<Addnewcollec />}/>
-            //           )}
