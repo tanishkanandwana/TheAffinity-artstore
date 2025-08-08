@@ -1,1 +1,8 @@
-node_modules/
+# Ignore all env files globally
+.env
+frontend/.env
+backend/.env
+
+# Other sensitive/config files
+config.js
+secret.js
