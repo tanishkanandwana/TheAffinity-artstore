@@ -47,7 +47,7 @@ const SignUp = () => {
 
           <input
           type="text"
-          className="w-full mt-2 border text-gray-300 p-2 outline-none"
+          className="w-full mt-2 border text-gray-700 p-2 outline-none"
           placeholder="your username"
           name="username"
           required 
@@ -62,7 +62,7 @@ const SignUp = () => {
           </label>
           <input
             type="text"
-          className="w-full mt-2  border text-gray-300 p-2 outline-none"
+          className="w-full mt-2  border text-gray-700 p-2 outline-none"
           placeholder="your email"
           name="email"
           required 
@@ -77,7 +77,7 @@ const SignUp = () => {
           </label>
           <input
             type="password"
-          className="w-full mt-2 border text-gray-300 p-2 outline-none"
+          className="w-full mt-2 border text-gray-700 p-2 outline-none"
           placeholder="set your password"
           name="password"
           required
@@ -91,7 +91,7 @@ const SignUp = () => {
             Address
           </label>
           <textarea
-          className="w-full mt-2 border text-lime-50 p-2 outline-none"
+          className="w-full mt-2 border text-gray-700 p-2 outline-none"
           rows="5"
           placeholder="your full address"
           name="address"

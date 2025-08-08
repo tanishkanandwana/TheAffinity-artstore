@@ -3,9 +3,9 @@ import { RxCross1 } from "react-icons/rx";
 const SeeUserData = ({ userDivData, userDiv, setuserDiv}) =>{
  return (
     <>
-    <div className={`${userDiv} top-0 left-0 h-screen w-full bg-pink-700 opacity-80`}></div>  
-    <div className={`${userDiv} top-0 left-0 h-screen w-full items-center justify-center`}>
-        <div className='bg-white rounded p-4 w-[80%] md:w-[50%] lg:w-[40%] text-pink-800'>
+    <div className={`${userDiv} top-5  h-screen w-full bg-[#F5E6DA] opacity-80`}></div>  
+    <div className={`${userDiv} top-5 h-screen w-full items-center justify-center`}>
+        <div className='bg-[#FDF8F6] rounded p-4 w-[80%] md:w-[50%] lg:w-[40%] text-[#4B001F]'>
             <div className='flex items-center justify-between'>
                 <h1 className='text-2xl font-semibold'>User Information</h1>
                 <button onClick={() => setuserDiv("hidden")

@@ -76,7 +76,7 @@ console.log("Fetched Orders (admin):", data); // Add this
           <Loader />
         </div>
       ) : AllOrders.length > 0 ? (
-        <div className='h-[100%] p-0 md:p-4 text-lime-100'>
+        <div className='h-[100%] p-0 md:p-4 text-[#4B001F]'>
           <h1 className='text-3xl md:text-5xl font-semibold text-pink-800 mb-8'>
             All Orders
           </h1>
@@ -98,7 +98,7 @@ console.log("Fetched Orders (admin):", data); // Add this
     console.log('Order item:', items);
   if (!items.art) {
     return (
-      <div key={items._id || i} className='bg-pink-700 w-full rounded py-2 px-4 flex gap-2 text-red-500'>
+      <div key={items._id || i} className='bg-[#FDF8F6] w-full rounded py-2 px-4 flex gap-2 text-red-500'>
         <div className='w-[40%] md:w-[22%]'>Art Not Found</div>
       </div>
     );
@@ -106,7 +106,7 @@ console.log("Fetched Orders (admin):", data); // Add this
   return (
     <div
       key={items._id || i}
-      className='bg-pink-700 w-full rounded py-2 px-4 flex gap-2 hover:bg-pink-800 cursor-pointer transition-all duration-400'
+      className='bg-[#FDF8F6] w-full rounded py-2 px-4 flex gap-2 hover:bg-[#F5E6DA] cursor-pointer transition-all duration-400'
     >
       <div className='w-[3%] text-center'>{i + 1}</div>
       <div className='w-[40%] md:w-[22%]'>

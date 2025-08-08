@@ -58,7 +58,7 @@ navigate("/profile");
    
              <input
              type="text"
-             className="w-full mt-2 text-gray-300 border p-2 outline-none"
+             className="w-full mt-2 text-gray-700 border p-2 outline-none"
              placeholder="your username"
              name="username"
              required
@@ -75,7 +75,7 @@ navigate("/profile");
              </label>
              <input
                type="password"
-             className="w-full mt-2 text-gray-300 border p-2 outline-none"
+             className="w-full mt-2 text-gray-700 border p-2 outline-none"
              placeholder="enter password"
              name="password"
              required

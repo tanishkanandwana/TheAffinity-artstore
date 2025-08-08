@@ -7,8 +7,9 @@ const app = express();
 const allowedOrigins = [
   "https://tranquil-eclair-f64c68.netlify.app",
   "https://celadon-florentine-b0fac0.netlify.app",
+  "http://localhost:5173",
   "https://fantastic-trifle-191817.netlify.app",
-  "http://localhost:5173"
+ 
 ];
 
 // app.use(cors({

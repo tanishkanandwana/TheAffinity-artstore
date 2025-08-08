@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 const categories = [
   { title: "Polaroid Gifts", img: "polaroid.jpg" },
   { title: "Portraits", img: "portrait.jpg" },
-  { title: "Gift Hampers", img: "hampers.jpg" },
+  { title: "Customised Gift Hamper", img: "hampers.jpg" },
   { title: "Occasional Picks", img: "occasion.jpg" },
   // add more if needed
 ];
@@ -31,16 +31,17 @@ const CarouselCategories = () => {
   };
 
   return (
-    <div className="px-4 md:px-8 mt-10 z-20 relative">
+    <div className="px-4 md:px-8 mt-16 z-20 relative">
       <h2
-        className="text-2xl sm:text-3xl text-center text-[#4B001F] font-semibold mb-6"
+        className="text-2xl sm:text-3xl text-center text-[#4B001F] font-semibold mb-10"
         style={{ fontFamily: "'Marcellus', serif" }}
       >
         Explore Gifts by Category
       </h2>
       <Slider {...settings}>
         {categories.map((cat, i) => (
-          <div key={i} className="flex flex-col items-center p-4">
+          <div key={i} className="!flex !flex-col !items-center !justify-center text-center px-2">
+
             <Link to={`/category/${toSlug(cat.title)}`} className="group">
               <img
                 src={cat.img}
@@ -48,7 +49,7 @@ const CarouselCategories = () => {
                 className="rounded-full w-36 h-36 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105 cursor-pointer"
               />
               <p
-                className="mt-3 text-[#4B001F] font-semibold text-lg text-center"
+                className="mt-5 text-[#4B001F] font-semibold text-lg text-center"
                 style={{ fontFamily: "'Marcellus', serif" }}
               >
                 {cat.title}
