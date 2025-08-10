@@ -13,5 +13,5 @@ React • Tailwind CSS • Node.js • Express • MongoDB(atlas) • JWT
 
 ## 🌐 Live Links
 
-- **Frontend (Netlify)**: [celadon-florentine-b0fac0.netlify.app](https://celadon-florentine-b0fac0.netlify.app) 
+- **Frontend (Netlify)**: [https://mellifluous-tapioca-399521.netlify.app/] 
 
