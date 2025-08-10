@@ -5,10 +5,8 @@ const app = express();
 // TEST COMMENT: added on Aug 8
 
 const allowedOrigins = [
-  "https://tranquil-eclair-f64c68.netlify.app",
-  "https://mellifluous-tapioca-399521.netlify.app",
+ "https://mellifluous-tapioca-399521.netlify.app",
   "http://localhost:5173",
-  "https://fantastic-trifle-191817.netlify.app",
  
 ];
 
