@@ -191,21 +191,21 @@ const Hero = () => {
       {/* Centered Text Content */}
     <div className="relative z-20 flex flex-col justify-center sm:justify-center items-center text-center min-h-[80vh] sm:min-h-[70vh] px-4 pt-8 sm:pt-0">
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-[8rem] text-white"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-[7rem] text-white soft-glow"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          style={{ fontFamily: "'Marcellus', serif" }}
+          style={{ fontFamily: "'Cinzel Decorative', cursive" }}
           transition={{ duration: 1.2 }}
         >
-          The Affinity
+           THE AFFINITY
         </motion.h1>
 
         <motion.p
-          className="mt-4 text-lg sm:text-xl md:text-3xl text-white font-medium soft-glow"
+          className="mt-4 text-lg sm:text-xl md:text-2xl text-white font-medium soft-glow"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          style={{ fontFamily: "'Marcellus', serif" }}
+          style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
           Art that celebrates, Gifts that connect 
         </motion.p>
@@ -241,7 +241,7 @@ const Hero = () => {
 
           {/* Customize Yours Button */}
           <Link
-            to="/custom-request"
+            to="/custom-request-form"
             className="
               relative
               text-base sm:text-lg md:text-xl lg:text-2xl

@@ -47,12 +47,12 @@ navigate("/profile");
   };
 
   return (
-     <div className="bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da] text-[#4B001F] px-12 py-8 flex items-center justify-center h-screen">
+     <div className="bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da] text-[#4B001F] px-12 py-8 flex items-center justify-center h-screen" >
          <div className="bg-[#FDF8F6] rounded-lg px-8 py-5 w-full md:w-3/6 lg:w-2/6">
-         <p className="text-[#4B001F] text-2xl font-semibold flex items-center justify-center">Login</p>
+         <p className="text-[#4B001F] text-2xl font-semibold flex items-center justify-center"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Login</p>
          <div className='mt-4'>
            <div>
-             <label htmlFor='' className='text-gray-700'>
+             <label htmlFor='' className='text-gray-700'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
                Username
              </label>
    
@@ -70,7 +70,7 @@ navigate("/profile");
           
    
              <div className='mt-4'>
-             <label htmlFor='' className='text-gray-700'>
+             <label htmlFor='' className='text-gray-700'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
                Password
              </label>
              <input

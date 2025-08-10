@@ -10,7 +10,7 @@ const Navbar = () => {
     { title: "All Arts", link: "/all-arts" },
     { title: "Cart", link: "/cart" },
     { title: "About us", link: "/about-us" },
-       { title: "Contact us", link: "/contact-us" },
+      
     { title: "My Profile", link: "/profile" },
  
     { title: "Admin Profile", link: "/profile" },
@@ -21,7 +21,7 @@ const Navbar = () => {
 
   // Adjust links based on auth
  const visibleLinks = links.filter((link) => {
-  if (!isLoggedIn && (link.title === "Profile" || link.title === "Admin Profile" || link.title === "Cart")) {
+  if (!isLoggedIn && (link.title === "My Profile" || link.title === "Admin Profile" || link.title === "Cart")) {
     return false;
   }
 
@@ -29,7 +29,7 @@ const Navbar = () => {
     return false;
   }
 
-  if (isLoggedIn && role === "admin" && link.title === "Profile") {
+  if (isLoggedIn && role === "admin" && link.title === "My Profile") {
     return false;
   }
 
@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="z-50 sticky top-0 shadow-md flex 	bg-[#661638] text-white pl-8 py-4 items-center justify-between h-16 text-l" style={{ fontFamily: "'Marcellus', serif" }}>
+      <nav className="z-50 sticky top-0 shadow-md flex 	bg-[#661638] text-white pl-8 py-4 items-center justify-between h-16 text-l" style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
         {/* Desktop Links */}
         <div className="hidden md:flex gap-6 items-center">
           {visibleLinks.map((item, i) => (
@@ -56,7 +56,7 @@ const Navbar = () => {
               ) : (
                 <Link
                   to={item.link}
-                  className="hover:text-lime-200 transition-all duration-300"
+                  className="hover:text-soft-glow transition-all duration-300"
                 >
                   {item.title}
                 </Link>

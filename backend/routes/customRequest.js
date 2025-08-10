@@ -24,31 +24,38 @@ router.post("/submit", authenticateToken, async (req, res) => {
   }
 });
 
+
 // Get all custom requests for a user
 router.get("/user/:userId", authenticateToken, async (req, res) => {
   try {
-    const requests = await CustomRequest.find({ userId: req.params.userId }).sort({ createdAt: -1 });
+    const requests = await CustomRequest.find({ userId: req.params.userId })
+      .sort({ createdAt: -1 })
+      .populate("userId", "username email"); // ✅ added populate
     res.json(requests);
   } catch (error) {
     res.status(500).json({ message: "Failed to fetch custom requests" });
   }
 });
 
-// Admin uploads options
+
 router.patch("/upload-options/:id", authenticateToken, async (req, res) => {
   try {
-    const { adminOptions } = req.body;
+    const user = await User.findById(req.user.id);
+    if (!user || user.role !== "admin") {
+      return res.status(403).json({ message: "Access denied" });
+    }
 
+    const { adminOptions } = req.body;
     const updated = await CustomRequest.findByIdAndUpdate(
       req.params.id,
       { adminOptions, status: "Options Shared" },
       { new: true }
-    );
+    ).populate("userId", "username email");
 
     res.json(updated);
   } catch (error) {
-    res.status(500).json({ message: "Failed to upload options" });
-  }
+    res.status(500).json({ message: "Failed to upload options" });
+  }
 });
 
 // User selects final option
@@ -71,17 +78,21 @@ router.patch("/confirm-option/:id", authenticateToken, async (req, res) => {
 // Get all custom requests (Admin only)
 router.get("/all", authenticateToken, async (req, res) => {
   try {
-    const user = await User.findById(req.headers.id);
+    const user = await User.findById(req.user.id); 
+     console.log("Logged user:", user); // ✅ Fixed
     if (!user || user.role !== "admin") {
       return res.status(403).json({ message: "Access denied" });
     }
 
-    const allRequests = await CustomRequest.find().sort({ createdAt: -1 }).populate("userId", "name email");
+    const allRequests = await CustomRequest.find()
+      .sort({ createdAt: -1 })
+      .populate("userId", "username email");
     res.json(allRequests);
   } catch (error) {
     console.error("Error fetching all custom requests:", error);
     res.status(500).json({ message: "Failed to fetch custom requests" });
   }
 });
+
 
 module.exports = router;

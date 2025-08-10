@@ -58,12 +58,12 @@ const Cart = () => {
     }
   }
   return (
-    <div className='bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da]  px-12 py-8  min-h-screen' style={{ fontFamily: "'Marcellus', serif" }}>
-    {!Cart && <div className='w-full h-screen flex items-center justify-center' style={{ fontFamily: "'Marcellus', serif" }}><Loader /></div>}
+    <div className='bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da]  px-12 py-8  min-h-screen' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+    {!Cart && <div className='w-full h-screen flex items-center justify-center' style={{ fontFamily: "'Cinzel Decorative', cursive" }}><Loader /></div>}
     {Cart && Cart.length === 0 && (
       <div className='h-screen'>
-        <div className='h-[100%] flex items-center justify-center flex-col'style={{ fontFamily: "'Marcellus', serif" }}>
-          <h1 className='text-5xl lg:text-6xl font-semibold text-white' style={{ fontFamily: "'Marcellus', serif" }}>Empty Cart</h1>
+        <div className='h-[100%] flex items-center justify-center flex-col'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+          <h1 className='text-3xl lg:text-4xl font-semibold text-white' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Empty Cart</h1>
           {/* <img 
           src={emptyCartImage }
            alt="empty cart"
@@ -71,7 +71,7 @@ const Cart = () => {
            <Lottie
   animationData={emptyCartAnimation}
   loop={true}
-  className='h-[30vh] lg:h-[40vh]'
+  className='h-[20vh] lg:h-[30vh]'
 />
 
 
@@ -82,11 +82,11 @@ const Cart = () => {
     )}
     {Cart && Cart.length > 0 && (
     <>
-    <h1 className='text-4xl flex items-center justify-center font-semibold text-[#4B001F] mb-8'>My Cart<span className='ms-2 mt-1'><CiShoppingCart /></span></h1>
+    <h1 className='text-4xl flex items-center justify-center font-semibold text-[#4B001F] mb-8'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>My Cart<span className='ms-2 mt-1'><CiShoppingCart /></span></h1>
    {Cart.map((items, i) => (
   <div
     key={i}
-    className="w-full my-4 rounded flex flex-col md:flex-row p-4 bg-[#FFF5F9] items-start gap-4"
+    className="w-full my-4 rounded flex flex-col md:flex-row p-4 bg-[#FFF5F9] items-start gap-4"style={{ fontFamily: "'Cinzel Decorative', cursive" }}
   >
     {/* Image on Left */}
     <img
@@ -124,7 +124,7 @@ const Cart = () => {
     )}
     {Cart && Cart.length > 0 && (
       <div className='mt-4 w-full flex ites-center justify-end'>
-        <div className='p-4  rounded'>
+        <div className='p-4  rounded'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
           <h1 className='text-3xl text-[#473027ff] font-semibold'>Total amount</h1>
           <div className='mt-3 flex items-center justify-between text-xl text-white'>
             <h2>Quantity: {Cart.length} </h2> <h2 className='text-lime-600 text-xl font-semibold'> ₹{Total}</h2>

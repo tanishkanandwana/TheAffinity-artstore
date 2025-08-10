@@ -61,11 +61,11 @@ const Addnewcollec = () => {
 
   return (
 
-  <div className='h-[100%] p-0 md:p-4'>
+  <div className='h-[100%] p-0 md:p-4' >
     <h1 className='text-3xl md:text-5xl font-semibold text-[#4B001F] mb-8'>Add collection</h1>
     <div className='p-4 bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da]  rounded'>
         <div>
-            <label htmlFor='' className='text-[#4B001F]'>Image</label>
+            <label htmlFor='' className='text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Image</label>
             <input 
             type="text"
             className='w-full mt-2 bg-[#FDF8F6] text-gray-700 p-2 outline-none'
@@ -77,7 +77,7 @@ const Addnewcollec = () => {
             />
         </div>
         <div className='mt-4'>
-            <label htmlFor='' className='text-[#4B001F]'>
+            <label htmlFor='' className='text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
                 Collection type 
             </label>
             <input 
@@ -90,7 +90,7 @@ const Addnewcollec = () => {
             onChange={change}  />
         </div>
          <div className='mt-4'>
-            <label htmlFor='' className='text-[#4B001F]'>
+            <label htmlFor='' className='text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
                 Maker 
             </label>
             <input 
@@ -105,7 +105,7 @@ const Addnewcollec = () => {
 
         <div className='mt-4 flex gap-4'>
             <div className='w-3/6'>
-             <label htmlFor='' className='text-[#4B001F]'>Form</label>
+             <label htmlFor='' className='text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Form</label>
                 <input 
             type="text"
             className='w-full mt-2 bg-[#FDF8F6] text-gray-700 p-2 outline-none'
@@ -116,7 +116,7 @@ const Addnewcollec = () => {
             onChange={change}  />
             </div>
             <div className='w-3/6'>
-              <label htmlFor='' className='text-[#4B001F]'>Price</label>
+              <label htmlFor='' className='text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Price</label>
                 <input 
             type="number"
             className='w-full mt-2 bg-[#FDF8F6] text-gray-700 p-2 outline-none'
@@ -127,7 +127,7 @@ const Addnewcollec = () => {
             onChange={change}  /></div>
         </div>
         <div className='mt-4'>
-             <label htmlFor='' className='text-[#4B001F]'>Description of collection</label>
+             <label htmlFor='' className='text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Description of collection</label>
              <textarea
              className='w-full mt-2 bg-[#FDF8F6] text-gray-700 p-2 outline-none'
              rows="5"
@@ -138,7 +138,7 @@ const Addnewcollec = () => {
              onChange={change} />
         </div>
 
-        <button className='mt-4 px-3 bg-[#4B001F] text-white font-semibold py-2 rounded hover:bg-[#4B001F] hover:text-gray-700 transition-all duration-600' onClick={submit}>
+        <button className='mt-4 px-3 bg-[#4B001F] text-white font-semibold py-2 rounded hover:bg-[#4B001F] hover:text-white transition-all duration-600'style={{ fontFamily: "'Cinzel Decorative', cursive" }} onClick={submit}>
             Add collection
         </button>
         

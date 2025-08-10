@@ -42,7 +42,6 @@ const Arts = require("./routes/art");
 const favourite = require("./routes/favourite");
 const Cart = require("./routes/cart");
 const Order = require("./routes/order");
-
 const customRequestRoute = require("./routes/customRequest");
 // app.use(express.json());
 //routes

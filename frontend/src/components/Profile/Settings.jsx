@@ -3,6 +3,8 @@ import axios from 'axios';
 import Loader from '../loader/Loader';
 import Swal from 'sweetalert2';
 
+
+
 const Settings = () => {
   const [Value, setValue] = useState({ address: ""});
   const [ProfileData, setProfileData] = useState();
@@ -44,38 +46,39 @@ const Settings = () => {
   return <>
   {!ProfileData && <div className='w-full h-[100%] flex items-center justify-center'><Loader /></div>}{" "}
   {ProfileData && (
-    <div className='h-[100%] p-0 md:p-4 text-pink-500'>
-      <h1 className='text-3xl md:text-5xl font-semibold text-pink-800 mb-8'>
+    <div className='h-[100%] p-0 md:p-4 text-white'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+      <h1 className='text-3xl md:text-4xl font-semibold text-[#4B001F] mb-6'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
         Settings
       </h1>
-      <div className='flex gap-12'>
-        <div className=''>
-          <label htmlFor=''>Username</label>
-          <p className='p-2 rounded bg-pink-900 mt-2 font-semibold'>
-            {ProfileData.username}
-          </p>
+    
+         <div className='w-full max-w-3xl bg-[#d9bdaa] p-4 rounded-l shadow-lg border-none'>
+          <label
+    htmlFor="address"
+    className="block text-lg font-semibold mb-1 text-[#4B001F] text-center"
+    style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+  >
+    Address
+  </label>
+
+         <textarea
+    id="address"
+    className="w-full p-4 rounded-lg bg-[#e3ccc0] border-none shadow-sm text-[#4B001F] font-semibold"
+    rows="3"
+    placeholder="Enter your address"
+    name="address"
+    value={Value.address}
+    onChange={change}
+    style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+  />
         </div>
-        <div className=''>
-          <label htmlFor=''>Email</label>
-          <p className='p-2 rounded bg-pink-900 mt-2 font-semibold'>
-            {ProfileData.email}
-          </p>
-        </div>
-        </div>
-         <div className=''>
-          <label htmlFor=''>Address</label>
-        <textarea
-        className='p-2 rounded bg-pink-900 mt-2 font-semibold'
-        rows = "5"
-        placeholder = "Address"
-        name = "address"
-        value = {Value.address}
-        onChange={change}
-        />
-        </div>
-        <div className='mt-4 flex justify-end'>
-          <button className='bg-lime-500 text-white px-8 py-3 font-semibold rounded hover:bg-lime-600 transition-all duration-600' onClick={submitAddress}>Update</button>
-        </div>
+         <div className="mt-6 flex justify-end">
+    <button
+      className="bg-[#4B001F] text-white px-8 py-3 font-semibold rounded-lg hover:bg-[#2e0013] transition-all duration-300 shadow-md"
+      onClick={submitAddress}
+    >
+      Update
+    </button>
+  </div>
       
     </div>
   )}

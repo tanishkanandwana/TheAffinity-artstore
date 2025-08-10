@@ -59,7 +59,7 @@ const AllCustomRequests = () => {
     <>
   
   <div className="p-6">
-    <h1 className="text-2xl font-semibold mb-4">All Custom Requests</h1>
+    <h1 className="text-2xl font-semibold mb-4"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>All Custom Requests</h1>
 
     {requests.length === 0 ? (
       <p>No custom requests found.</p>

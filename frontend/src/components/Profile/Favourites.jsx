@@ -23,7 +23,7 @@ useEffect(() => {
 
 
   return (
-    <> {Favouritearts?.length === 0 && (<div className='text-5xl font-semibold text-pink-600 h-[100%] flex items-center justify-center w-full'>
+    <> {Favouritearts?.length === 0 && (<div className='text-3xl font-semibold text-[#f5eae5] h-[100%] flex items-center justify-center w-full' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
       No Favourite collections 
       <span className='ms-2 mt-3'><PiSmileyMeltingFill /></span>
 

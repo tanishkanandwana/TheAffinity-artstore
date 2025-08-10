@@ -51,41 +51,51 @@ const ArtCard = ({data, favourite}) => {
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.5, ease: "easeOut" }}
   whileHover={{
-    scale: 1.08,
-    transition: { duration: 0.4, ease: "easeInOut" }
+    scale: 1.05,
+    transition: { duration: 0.3, ease: "easeInOut" }
   }}
-  className="rounded-lg shadow-md"
+  className="rounded-lg shadow-md max-w-[220px] mx-auto"
 >
-    <div className='bg-[#661638] rounded p-2 flex flex-col' style={{ fontFamily: "'Marcellus', serif" }}>
-      <Link to={`/view-art-details/${data._id}`}>
-    
-    
-   
-      <div className="bg-[#f5e6da] rounded-2xl shadow-md overflow-hidden">
-    
-      <div className="aspect-[3/4]" >
-         <img 
-  src={fixedImageUrl} 
-  alt={data.type || "art image"} 
-  className="w-full h-full object-cover"
-/>
-
+  <div
+    className="bg-[#661638] rounded p-3 flex flex-col"
+    style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+  >
+    <Link to={`/view-art-details/${data._id}`}>
+      <div className="bg-[#f5e6da] rounded-xl shadow-md overflow-hidden">
+        {/* Slightly bigger image */}
+        <div className="w-full h-52">
+          <img
+            src={fixedImageUrl}
+            alt={data.type || "art image"}
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className='p-2'>
-      <h2 className="mt-4 text-xl font-semibold text-center text-[#382b24ff]">{data.type}</h2>
-      <p className="mt-2 text-pink-700 font-semibold"> {data.form}</p>
-      <p className="-mt-1 text-lime-500 font-semibold ">₹ {data.price}</p>
-      </div> 
+        <div className="p-3">
+          <h2 className="mt-2 text-base font-semibold text-center text-[#382b24ff] truncate">
+            {data.type}
+          </h2>
+          <p className="mt-1 text-sm text-pink-700 font-semibold">
+            {data.form}
+          </p>
+          <p className="text-sm text-lime-500 font-semibold">
+            ₹ {data.price}
+          </p>
+        </div>
+      </div>
+    </Link>
 
-    
-      </div> 
-      </Link>
-  {favourite && (<button className='bg-[#f5e6da] px-4 py-2 rounded-lg border border-pink-900 text-pink-600 hover:bg-[#e7c3b1] hover:text-white mt-4' onClick={handleRemoveArt}>Remove from favourites
+    {favourite && (
+      <button
+        className="bg-[#f5e6da] px-3 py-2 rounded-lg border border-pink-900 text-sm text-pink-600 hover:bg-[#e7c3b1] hover:text-white mt-3"
+        onClick={handleRemoveArt}
+      >
+        Remove
+      </button>
+    )}
+  </div>
+</motion.div>
 
-  </button>)}
 
-    </div>
-    </motion.div>
   );
 };
 

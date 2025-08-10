@@ -21,8 +21,8 @@ const AboutUs = () => {
         className="relative z-10 flex flex-col justify-center items-center h-full px-6"
         style={{ fontFamily: "'Marcellus', serif" }}
       >
-        <h1 className="text-4xl text-[#F5E6DA] text-center font-bold mb-6">THE AFFINITY</h1>
-        <p className="text-lg text-[#DCC9B8] text-center leading-relaxed max-w-xl">
+        <h1 className="text-4xl text-[#F5E6DA] text-center font-bold mb-6"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>THE AFFINITY</h1>
+        <p className="text-lg text-[#DCC9B8] text-center leading-relaxed max-w-xl"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
           -Because Gifting is more than a Tradition - It's how we Celebrate, Connect, and Remember.
           <br />
           From Affinity to THE AFFINITY, We offer 'Handmade pieces' -<br />
@@ -39,7 +39,7 @@ const AboutUs = () => {
           <br />
           From us to you.
           <br />
-          With Love - THE AFFINITY🤎
+          With Love - THE AFFINITY ♡
         </p>
       </div>
     </div>

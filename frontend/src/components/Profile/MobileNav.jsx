@@ -8,39 +8,39 @@ const MobileNav = () => {
     <>
     {role === "user" && (
       <div className='w-full flex lg:hidden items-center justify-between mt-4'>
-       <Link to="/profile" className="text-lime-50 font-semibold w-full  text-center hover:bg-pink-900 rounded transition-all duration-600">
+       <Link to="/profile" className="text-lime-50 font-semibold w-full  text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
               Favorites
               </Link>
       
               <Link 
-              to="/profile/orderHistory" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600">
+              to="/profile/orderHistory" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
                   Order History
               </Link>
 
            <Link 
-      to="/profile/custom-requests" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600">
+      to="/profile/custom-requests" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
       Custom Requests
     </Link>
 
 
-          <Link to="/profile/settings" className="text-lime-50 font-semibold w-full  text-center hover:bg-pink-900 rounded transition-all duration-600">
+          <Link to="/profile/settings" className="text-lime-50 font-semibold w-full  text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
           Settings
           </Link>
     </div>
     )}
      {role === "admin" && (
       <div className='w-full flex lg:hidden items-center justify-between mt-4'>
-       <Link to="/profile" className="text-lime-50 font-semibold w-full  text-center hover:bg-pink-900 rounded transition-all duration-600">
+       <Link to="/profile" className="text-lime-50 font-semibold w-full  text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
               All orders
               </Link>
       
-<Link to="/profile/custom-requests" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600">
+<Link to="/profile/custom-requests" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
   Custom Requests
 </Link>
 
 
               <Link 
-              to="/profile/add-art" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600">
+              to="/profile/add-art" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
                  Add new collection
               </Link>
          

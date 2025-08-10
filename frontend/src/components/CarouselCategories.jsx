@@ -5,10 +5,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const categories = [
-  { title: "Polaroid Gifts", img: "polaroid.jpg" },
-  { title: "Portraits", img: "portrait.jpg" },
-  { title: "Customised Gift Hamper", img: "hampers.jpg" },
-  { title: "Occasional Picks", img: "occasion.jpg" },
+  { title: "Polaroids", img: "polaroid.jpg" },
+  { title: "Bookmarks", img: "bookmark.jpg" },
+  { title: "Customised-Gifts", img: "hampers.jpg" },
+  { title: "Occasional-picks", img: "occasion.jpg" },
+  { title: "Fabrics", img: "fabric.jpg" },
+  
+  
   // add more if needed
 ];
 
@@ -34,7 +37,7 @@ const CarouselCategories = () => {
     <div className="px-4 md:px-8 mt-16 z-20 relative">
       <h2
         className="text-2xl sm:text-3xl text-center text-[#4B001F] font-semibold mb-10"
-        style={{ fontFamily: "'Marcellus', serif" }}
+       style={{ fontFamily: "'Cinzel Decorative', cursive" }}
       >
         Explore Gifts by Category
       </h2>
@@ -42,7 +45,8 @@ const CarouselCategories = () => {
         {categories.map((cat, i) => (
           <div key={i} className="!flex !flex-col !items-center !justify-center text-center px-2">
 
-            <Link to={`/category/${toSlug(cat.title)}`} className="group">
+            <Link to={`/category/${encodeURIComponent(cat.title)}`} className="group">
+
               <img
                 src={cat.img}
                 alt={cat.title}
@@ -50,7 +54,7 @@ const CarouselCategories = () => {
               />
               <p
                 className="mt-5 text-[#4B001F] font-semibold text-lg text-center"
-                style={{ fontFamily: "'Marcellus', serif" }}
+              style={{ fontFamily: "'Cinzel Decorative', cursive" }}
               >
                 {cat.title}
               </p>

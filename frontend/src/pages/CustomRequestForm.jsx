@@ -15,6 +15,13 @@ const CustomRequestForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
+    if (token) {
+  const base64Payload = token.split('.')[1];
+  const payload = JSON.parse(atob(base64Payload));
+  console.log("Decoded token payload:", payload);
+} else {
+  console.log("No token found in localStorage");
+}
 
     try {
       const response = await axios.post(
@@ -60,8 +67,8 @@ const CustomRequestForm = () => {
       <div className="relative z-10 flex justify-center items-center h-full px-4">
         <div className="p-6 max-w-xl w-full bg-white/80 backdrop-blur-md rounded-lg shadow-2xl">
           <h2
-            className="text-3xl font-bold mb-6 text-center text-[#4B001F]"
-            style={{ fontFamily: "'Marcellus', serif" }}
+            className="text-3xl font-bold mb-6 text-center text-[#4B001F]" style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+            
           >
             Customize Your Gift
           </h2>
@@ -93,7 +100,7 @@ const CustomRequestForm = () => {
 
             <input
               type="email"
-              placeholder="Your Email or Phone"
+              placeholder="Your Email"
               value={contactInfo}
               onChange={(e) => setContactInfo(e.target.value)}
               required
@@ -122,3 +129,4 @@ const CustomRequestForm = () => {
 };
 
 export default CustomRequestForm;
+// https://i.pinimg.com/1200x/65/c6/3c/65c63c48abd73a23cca757cf1b9f9b9d.jpg  

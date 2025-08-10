@@ -36,7 +36,7 @@ const UserOrderHistory = () => {
    {OrderHistory && OrderHistory.length ===0 && (
     <div className='h-[80vh] p-4 text-lime-100'>
       <div className='h-[100%] flex flex-col items-center justify-center'>
-        <h1 className='text-5xl font-semibold text-pink-800 mb-8'>No Order History</h1>
+        <h1 className='text-5xl font-semibold text-pink-800 mb-8'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>No Order History</h1>
         <img src={dataimage} alt="" className='h-[20vh] mb-8' />
 
       </div>
@@ -45,9 +45,9 @@ const UserOrderHistory = () => {
    )}
 
    {OrderHistory && OrderHistory.length >0 && (
-    <div className='h-[100%] p-0 md:p-4 text-pink-700'>
-      <h1 className='text-3xl md:text-5xl mb-8 font-semibold text-pink-800'>Your Order History</h1>
-      <div className='mt-4 bg-pink-600 w-full rounded py-2 px-4 flex gap-2'>
+    <div className='h-[100%] p-0 md:p-4 text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+      <h1 className='text-3xl md:text-5xl mb-8 font-semibold text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Your Order History</h1>
+      <div className='mt-4 bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da] w-full rounded py-2 px-4 flex gap-2'>
         <div className='w-[3%]'>
           <h1 className='text-center'>Sr.</h1>
         </div>
@@ -69,7 +69,7 @@ const UserOrderHistory = () => {
       </div>
 
     {OrderHistory.filter(item => item.art).map((items,i) => (        
-      <div className='bg-pink-900 w-full rounded py-2 px-4 flex gap-4 hover:bg-lime-300 hover:cursor-pointer'>
+      <div className='bg-[#FDF8F6] w-full rounded py-2 px-4 flex gap-4 hover:bg-[#F5E6DA] cursor-pointer transition-all duration-400'>
         <div className='w-[3%]'>
           <h1 className='text-center'>{i+1}</h1>
 
@@ -80,7 +80,7 @@ const UserOrderHistory = () => {
     {items.art.type}
   </Link>
 ) : (
-  <span className='text-red-200'>Art Not Found</span>
+  <span className='text-red-200'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Art Not Found</span>
 )}
 
 
@@ -101,7 +101,7 @@ const UserOrderHistory = () => {
           )}</h1>
         </div>
         <div className='w-none md:w-[5%] hidden md:block'>
-          <h1 className='text-sm text-lime-100'>COD</h1>
+          <h1 className='text-sm text-blue-500'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>COD</h1>
         </div>
       </div>
     ))}

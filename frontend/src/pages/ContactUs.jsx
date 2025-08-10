@@ -18,7 +18,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="h-screen p-8 bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da]  text-[#4B001F]" style={{ fontFamily: "'Marcellus', serif" }}>
+    <div className="h-screen p-8 bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da]  text-[#4B001F]" style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
       <h1 className="text-4xl text-center font-bold mb-10">Contact Us</h1>
       <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-[#FDF8F6] shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <label className="block mb-4">

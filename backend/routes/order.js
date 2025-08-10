@@ -5,33 +5,6 @@ const Art = require("../models/art");
 const Order = require("../models/order");
 
 
-//place order
-// router.post("/place-order", authenticateToken, async (req, res) => {
-//     try {
-//         const { id } = req.headers;
-//         const { order } = req.body;
-//         for(const orderData of order){
-//             const newOrder = new Order({user: id, art: orderData._id, status: "Order placed"});
-//             const orderDataFromDb = await newOrder.save();
-//             //saving order in user model
-//             await User.findByIdAndUpdate(id, {
-//                 $push: { orders: orderDataFromDb._id },
-//             });
-//             //clearing cart
-//             await User.findByIdAndUpdate(id, {
-//                 $pull: {cart: orderData._id},
-//             });
-//         }
-
-//         return res.json({
-//             status: "Success",
-//             message: "Order placed successfully",
-//         });
-//     } catch (error) {
-//          console.log(error);
-//         return res.status(500).json({message:"Internal server error"});
-//     }
-// });
 
 router.post("/place-order", authenticateToken, async (req, res) => {
   try {
@@ -114,28 +87,8 @@ router.get("/get-order-history", authenticateToken, async (req, res) => {
     }
 });
 
-//get all orders --admin role
-// router.get("/get-all-orders", authenticateToken, async (req, res) =>{
-//     try {
-//         const userData = await Order.find()
-//         .populate({
-//             path: "art",
-//         })
-//         .populate({
-//             path: "user",
-//         })
-//         .sort({ createdAt: -1});
-//         console.log("Orders Fetched (admin):", userData);
 
-//         return res.json({
-//             status:"Success",
-//             data: userData,
-//         });
-//     } catch (error) {
-//         console.log(error);
-//         return res.status(500).json({message:"Internal server error"});
-//     }
-// });
+
 router.get("/get-all-orders", authenticateToken, async (req, res) => {
   try {
     const userData = await Order.find()
@@ -162,18 +115,32 @@ router.get("/get-all-orders", authenticateToken, async (req, res) => {
 
 
 //update order --admin role
-router.put("/update-status/:id", authenticateToken, async (req, res) =>{
-try {
+router.put("/update-status/:id", authenticateToken, async (req, res) => {
+  try {
     const { id } = req.params;
-    await Order.findByIdAndUpdate(id, { status: req.body.status});
+    const { status } = req.body;
+
+    // Optionally check if status is allowed
+    const allowedStatuses = ["Order placed", "Out for delivery", "Delivered", "Canceled"];
+    if (!allowedStatuses.includes(status)) {
+      return res.status(400).json({ message: "Invalid status value" });
+    }
+
+    const updatedOrder = await Order.findByIdAndUpdate(id, { status }, { new: true });
+    if (!updatedOrder) {
+      return res.status(404).json({ message: "Order not found" });
+    }
+
     return res.json({
-        status: "Success",
-        message: "Status updated successfully",
+      status: "Success",
+      message: "Status updated successfully",
+      data: updatedOrder,
     });
-} catch (error) {
-     console.log(error);
-        return res.status(500).json({message:"Internal server error"});
-}
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
 });
+
 
 module.exports = router;

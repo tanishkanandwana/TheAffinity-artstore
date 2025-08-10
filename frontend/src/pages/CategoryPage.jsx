@@ -12,7 +12,7 @@ const CategoryPage = () => {
     const fetchArts = async () => {
       try {
         // Replace with your API endpoint that filters arts by category (type/form/etc)
-        const response = await axios.get(`https://theaffinity-artstore.onrender.com/api/v1/arts/get-by-type/${categoryName}`);
+        const response = await axios.get(`https://theaffinity-artstore.onrender.com/api/v1/arts/get-arts-by-type/${categoryName}`);
         setArts(response.data.data);
       } catch (error) {
         console.error('Failed to fetch arts by category/type:', error);
@@ -29,7 +29,7 @@ const CategoryPage = () => {
 
   return (
     <div className="px-6 py-8 bg-[#FFF5F9] min-h-screen">
-      <h2 className="text-4xl text-[#4B001F] font-semibold mb-6" style={{ fontFamily: "'Marcellus', serif" }}>
+      <h2 className="text-4xl text-[#4B001F] font-semibold mb-6" style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
         {categoryName.charAt(0).toUpperCase() + categoryName.slice(1)} Collections
       </h2>
       {arts && arts.length > 0 ? (
@@ -39,7 +39,7 @@ const CategoryPage = () => {
           ))}
         </div>
       ) : (
-        <p className="text-[#896c5dff] font-medium">No collections found for this category.</p>
+        <p className="text-[#896c5dff] font-medium"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>No collections found for this category.</p>
       )}
     </div>
   );
