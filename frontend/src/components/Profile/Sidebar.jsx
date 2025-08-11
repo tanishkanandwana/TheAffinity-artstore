@@ -27,14 +27,16 @@ const Sidebar = ({ data }) => {
             Favorites
           </Link>
 
+ <Link to="/profile/my-custom-requests" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
+      My Custom Requests
+    </Link>
+
           <Link to="/profile/orderHistory" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
             Order History
           </Link>
 
-          {/* User Custom Requests */}
-          <Link to="/profile/custom-requests" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
-            Custom Requests
-          </Link>
+        
+          
 
           <Link to="/profile/settings" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
             Settings
@@ -49,10 +51,9 @@ const Sidebar = ({ data }) => {
             All Orders
           </Link>
 
-          {/* Admin Custom Requests */}
-          <Link to="/profile/custom-requests-admin" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
-            Custom Requests
-          </Link>
+         <Link to="/profile/view-requests" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
+      View Requests
+    </Link>
 
           <Link to="/profile/add-art" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
             Add New Collection

@@ -1,98 +1,188 @@
-const router = require("express").Router();
+const express = require("express");
+const router = express.Router();
+const { authenticateToken } = require("../middleware/userAuth"); // Correct relative path to userAuth.js
 const CustomRequest = require("../models/customRequest");
-const { authenticateToken } = require("./userAuth");
-const User = require("../models/user");
-// Submit a custom request (User)
-router.post("/submit", authenticateToken, async (req, res) => {
-  try {
-    const { giftType, description, preferredDate, contactInfo, referenceFile } = req.body;
+const cloudinary = require("../config/cloudinary");
+const multer = require("multer");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
-    const request = new CustomRequest({
-      userId: req.user.id,
-      giftType,
-      description,
-      preferredDate,
-      contactInfo,
-      referenceFile,
-    });
-
-    await request.save();
-    res.status(201).json({ message: "Custom request submitted", request });
-  } catch (error) {
-    console.error("Custom request error:", error);
-    res.status(500).json({ message: "Failed to submit custom request" });
-  }
+// Multer Cloudinary storage setup with proper params key
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "customRequests",
+    allowed_formats: ["jpg", "jpeg", "png", "webp", "mp4", "mov", "avi"], // add more as needed
+    resource_type: "auto", // allow images & videos automatically
+  },
 });
 
+const upload = multer({ storage });
 
-// Get all custom requests for a user
-router.get("/user/:userId", authenticateToken, async (req, res) => {
+// ================= USER ROUTES =================
+
+// Submit custom request with reference media upload
+router.post(
+  "/",
+  authenticateToken,
+  upload.array("referenceMedia", 3),
+  async (req, res) => {
+    try {
+      const files = req.files ? req.files.map(file => file.path) : [];
+      const { pieceType, preferredDate, contact, description, quantity } = req.body;
+
+      // Validation (optional, you can extend)
+      if (!pieceType || !preferredDate || !contact || !description || !quantity) {
+        return res.status(400).json({ message: "All required fields must be provided." });
+      }
+
+      const request = new CustomRequest({
+        userId: req.user.id,
+        pieceType,
+        preferredDate,
+        contact,
+        referenceMedia: files,
+        description,
+        quantity,
+      });
+
+      await request.save();
+      res.status(201).json({ message: "Custom request submitted", request });
+    } catch (error) {
+      console.error("Error submitting custom request:", error);
+      res.status(500).json({ message: "Server error", error: error.message });
+    }
+  }
+);
+
+// Get logged-in user's custom requests
+router.get("/my", authenticateToken, async (req, res) => {
   try {
-    const requests = await CustomRequest.find({ userId: req.params.userId })
-      .sort({ createdAt: -1 })
-      .populate("userId", "username email"); // ✅ added populate
+    const requests = await CustomRequest.find({ userId: req.user.id }).sort({ createdAt: -1 });
     res.json(requests);
   } catch (error) {
-    res.status(500).json({ message: "Failed to fetch custom requests" });
+    console.error("Error fetching user's requests:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 });
 
-
-router.patch("/upload-options/:id", authenticateToken, async (req, res) => {
-  try {
-    const user = await User.findById(req.user.id);
-    if (!user || user.role !== "admin") {
-      return res.status(403).json({ message: "Access denied" });
-    }
-
-    const { adminOptions } = req.body;
-    const updated = await CustomRequest.findByIdAndUpdate(
-      req.params.id,
-      { adminOptions, status: "Options Shared" },
-      { new: true }
-    ).populate("userId", "username email");
-
-    res.json(updated);
-  } catch (error) {
-    res.status(500).json({ message: "Failed to upload options" });
-  }
-});
-
-// User selects final option
-router.patch("/confirm-option/:id", authenticateToken, async (req, res) => {
+// Select an option (user)
+router.put("/:id/select-option", authenticateToken, async (req, res) => {
   try {
     const { selectedOption } = req.body;
-
-    const updated = await CustomRequest.findByIdAndUpdate(
-      req.params.id,
-      { selectedOption, status: "Ordered" },
+    if (!selectedOption) {
+      return res.status(400).json({ message: "Selected option is required" });
+    }
+    const request = await CustomRequest.findOneAndUpdate(
+      { _id: req.params.id, userId: req.user.id },
+      { selectedOption },
       { new: true }
     );
+    if (!request) return res.status(404).json({ message: "Request not found" });
 
-    res.json(updated);
+    res.json(request);
   } catch (error) {
-    res.status(500).json({ message: "Failed to confirm selected option" });
+    console.error("Error selecting option:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 });
 
-// Get all custom requests (Admin only)
-router.get("/all", authenticateToken, async (req, res) => {
-  try {
-    const user = await User.findById(req.user.id); 
-     console.log("Logged user:", user); // ✅ Fixed
-    if (!user || user.role !== "admin") {
-      return res.status(403).json({ message: "Access denied" });
+// Request more options with new description and optional reference media upload (user)
+router.post(
+  "/:id/request-more-options",
+  authenticateToken,
+  upload.array("referenceMedia", 3),
+  async (req, res) => {
+    try {
+      const files = req.files ? req.files.map(file => file.path) : [];
+      const { description } = req.body;
+
+      const updateFields = {
+        $push: { referenceMedia: { $each: files } },
+        description,
+        status: "pending",
+      };
+
+      // Using findOneAndUpdate with $push and update fields atomically
+      const request = await CustomRequest.findOneAndUpdate(
+        { _id: req.params.id, userId: req.user.id },
+        updateFields,
+        { new: true }
+      );
+      if (!request) return res.status(404).json({ message: "Request not found" });
+
+      res.json({ message: "Requested more options", request });
+    } catch (error) {
+      console.error("Error requesting more options:", error);
+      res.status(500).json({ message: "Server error", error: error.message });
     }
+  }
+);
 
-    const allRequests = await CustomRequest.find()
-      .sort({ createdAt: -1 })
-      .populate("userId", "username email");
-    res.json(allRequests);
+// ================= ADMIN ROUTES =================
+
+// Middleware for admin role check
+const requireAdmin = (req, res, next) => {
+  if (req.user.role !== "admin") return res.status(403).json({ message: "Access denied: Admins only" });
+  next();
+};
+
+// Get all custom requests (admin)
+router.get("/", authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    const requests = await CustomRequest.find().populate("userId", "username email");
+    res.json(requests);
   } catch (error) {
-    console.error("Error fetching all custom requests:", error);
-    res.status(500).json({ message: "Failed to fetch custom requests" });
+    console.error("Error fetching all requests:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
   }
 });
 
+// Update status and status message (admin)
+router.put("/:id/update-status", authenticateToken, requireAdmin, async (req, res) => {
+  try {
+    const { status, statusMessage } = req.body;
+    if (!status) return res.status(400).json({ message: "Status is required" });
+
+    const request = await CustomRequest.findByIdAndUpdate(
+      req.params.id,
+      { status, statusMessage },
+      { new: true }
+    );
+    if (!request) return res.status(404).json({ message: "Request not found" });
+
+    res.json(request);
+  } catch (error) {
+    console.error("Error updating status:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+});
+
+// Upload admin options files (images/videos) (admin)
+router.post(
+  "/:id/upload-options",
+  authenticateToken,
+  requireAdmin,
+  upload.array("adminOptions", 5),
+  async (req, res) => {
+    try {
+      const files = req.files ? req.files.map(file => file.path) : [];
+      if (!files.length) {
+        return res.status(400).json({ message: "No files uploaded" });
+      }
+
+      const request = await CustomRequest.findByIdAndUpdate(
+        req.params.id,
+        { $push: { adminOptions: { $each: files } }, status: "reviewed" },
+        { new: true }
+      );
+      if (!request) return res.status(404).json({ message: "Request not found" });
+
+      res.json({ message: "Options uploaded", request });
+    } catch (error) {
+      console.error("Error uploading admin options:", error);
+      res.status(500).json({ message: "Server error", error: error.message });
+    }
+  }
+);
 
 module.exports = router;

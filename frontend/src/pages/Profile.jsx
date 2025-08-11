@@ -25,22 +25,7 @@ useEffect(() => {
 }, []);
 
   
-  // return (
-  //   <div className="bg-pink-700 px-2 md:px-12 flex flex-col md:flex-row  py-8 gap-4 text-white">
-  //   {!Profile && <div className='w-full h-[100%] flex items-center justify-center'><Loader /></div>}
-  //   {Profile &&  <>
-  //     <div className='w-full md:w-1/6  h-auto lg:h-screen'>
-  //       <Sidebar data={Profile}/>
-  //       <MobileNav />
-  //     </div>
-  //     <div className='w-full md:w-5/6'>
-
-     
-  //       <Outlet />
-  //     </div>
-  //    </>}
-  //   </div>
-  // )
+  
   return (
   <div className="bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da]  px-12 py-8 px-2 md:px-12 flex flex-col md:flex-row py-8 gap-4 text-white">
     {!Profile ? (

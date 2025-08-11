@@ -1,19 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-//testing cors upodate
-// TEST COMMENT: added on Aug 8
 
 const allowedOrigins = [
  "https://mellifluous-tapioca-399521.netlify.app",
   "http://localhost:5173",
- 
 ];
 
-// app.use(cors({
-//   origin: allowedOrigins,
-//   credentials: true
-// }));
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -40,29 +33,16 @@ const Arts = require("./routes/art");
 const favourite = require("./routes/favourite");
 const Cart = require("./routes/cart");
 const Order = require("./routes/order");
-const customRequestRoute = require("./routes/customRequest");
-// app.use(express.json());
-//routes
-// app.use("/api/v1", user);
-// app.use("/api/v1", Arts);
-// app.use("/api/v1", favourite);
-// app.use("/api/v1", Cart);
-// app.use("/api/v1", Order);
+const customRequestRoutes = require("./routes/customRequest");
+
 app.use("/api/v1/users", user);
 app.use("/api/v1/arts", Arts);
 app.use("/api/v1/favourites", favourite);
 app.use("/api/v1/cart", Cart);
 app.use("/api/v1/orders", Order);
-app.use("/api/v1/custom-request", customRequestRoute);
+app.use("/api/v1/custom-requests", customRequestRoutes);
 
-//
-// app.get("/", (req,res) =>{
-//     res.send("hello from backend side");
-// });
-//CREATING PORT
-// app.listen(process.env.PORT, () =>{
-//     console.log(`server started at port ${process.env.PORT}`);
-// });
+
 
 const PORT = process.env.PORT || 1000; // fallback for localhost
 
