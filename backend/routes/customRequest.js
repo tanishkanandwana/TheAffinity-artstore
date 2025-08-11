@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { authenticateToken } = require("../middleware/userAuth"); // Correct relative path to userAuth.js
+const { authenticateToken } = require("./userAuth");
 const CustomRequest = require("../models/customRequest");
 const cloudinary = require("../config/cloudinary");
 const multer = require("multer");
