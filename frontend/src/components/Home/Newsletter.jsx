@@ -37,7 +37,7 @@ const Newsletter = () => {
 
       {/* Content */}
       <div className="relative z-20 py-10 px-4 text-center text-[#6e433d] max-w-xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-2">Stay Inspired ✨</h2>
+        <h2 className="text-3xl font-semibold mb-2">Stay Connected</h2>
         <p className="mb-6">
           Subscribe to get updates on new collections, offers, and art stories.
         </p>
