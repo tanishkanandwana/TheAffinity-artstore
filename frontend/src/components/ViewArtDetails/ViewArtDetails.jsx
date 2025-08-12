@@ -24,14 +24,6 @@ const [reviewSubmitted, setReviewSubmitted] = useState(false);
  const [Data, setData] = useState();
 
 const backendBaseURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:1000";
-// const fixedImageUrl = Data.url.startsWith("http")
-//   ? Data.url.replace("http://localhost:1000", backendBaseURL)
-//   : `${backendBaseURL}/images/${Data.url}`;
-// const fixedImageUrl = Data 
-//   ? (Data.url.startsWith("http")
-//       ? Data.url.replace("http://localhost:1000", backendBaseURL)
-//       : `${backendBaseURL}/images/${Data.url}`)
-//   : ""; // or provide a placeholder image URL here
 const fixedImageUrl =
   Data && Data.url
     ? Data.url.startsWith("http")
@@ -41,13 +33,10 @@ const fixedImageUrl =
 
 
 
-  
+
  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
  const role = useSelector((state) => state.auth.role);
-//  console.log(isLoggedIn);
-//   console.log(role);
 
-// Fetch reviews when data is loaded
 useEffect(() => {
   const fetchReviews = async () => {
     try {
@@ -170,11 +159,12 @@ const handleReviewSubmit = async () => {
 className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 shadow-md"
 
 />
+{/* text-[#e1786d]  */}
 
 
        {isLoggedIn === true && role === "user" &&  (<div className='flex flex-row lg:flex-col mt-4 items-center justify-between lg:justify-start mt-4 lg:mt-1 px-3'>
-          <button className='bg-lime-50 rounded lg:rounded-full text-l p-3 -ml-3 lg:ml-1  lg:mr-1 text-red-600 flex items-center justify-center' onClick={handleFav}><FaHeart /><span className='ms-0  block lg:hidden'>Favourites</span></button>
-          <button className='text-white   bg-cyan-500 rounded lg:rounded-full text-l p-3 mt-0 -mr-3 lg:ml-1 lg:mr-1 lg:mt-4 text-lime-600 flex items-center justify-center' onClick={handleCart}><MdShoppingCart /><span className='ms-0 block lg:hidden'>Add to cart</span></button>
+          <button className='bg-white rounded lg:rounded-full text-l p-3 -ml-3 lg:ml-1  lg:mr-1 text-[#e1786d] flex items-center justify-center' onClick={handleFav}><FaHeart /><span className='ms-0  block lg:hidden'>Favourites</span></button>
+          <button className='text-[#d9a441]  bg-white rounded lg:rounded-full text-xl p-3 mt-0 -mr-3 lg:ml-1 lg:mr-1 lg:mt-4 text-lime-600 flex items-center justify-center' onClick={handleCart}><MdShoppingCart /><span className='ms-0 block lg:hidden'>Add to cart</span></button>
           </div>)}
 
           {isLoggedIn === true && role === "admin" &&  (<div className='flex flex-row lg:flex-col mt-4 items-center justify-between lg:justify-start mt-4 lg:mt-1 px-3'>
@@ -207,7 +197,7 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
 
 {/* RATING DISPLAY SECTION */}
 <div className="mt-8">
-  <h3 className="text-pink-800 text-2xl font-semibold mb-1"  style={{ fontFamily: "'Marcellus', serif" }}>Our Customer Reviews</h3>
+  <h3 className="text-[#4B001F] text-2xl font-semibold mb-1"  style={{ fontFamily: "'Marcellus', serif" }}>Our Customer Reviews</h3>
   
   {reviews.length === 0 && <p className="text-zinc-400 italic"  style={{ fontFamily: "'Marcellus', serif" }}>No reviews yet.</p>}
   
@@ -247,7 +237,7 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
     ></textarea>
     <button
       onClick={handleReviewSubmit}
-      className="bg-lime-400 text-pink-900 px-4 py-2 rounded font-semibold"
+      className="bg-[#facbc6] text-[#4B001F] border border-white hover:bg-[#f0d6c9ff] px-4 py-2 rounded font-semibold"
     >
       Submit Review
     </button>
