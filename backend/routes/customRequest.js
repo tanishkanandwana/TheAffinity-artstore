@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/user");
-const CustomRequest = require("../models/CustomRequest")
+const CustomRequest = require("../models/customRequest")
 const { authenticateToken } = require("./userAuth"); // your auth middleware
 
 // ------------------
