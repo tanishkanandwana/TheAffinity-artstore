@@ -22,6 +22,7 @@ import UpdateArt from "./pages/UpdateArt";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import ViewArtDetails from "./components/ViewArtDetails/ViewArtDetails";
+import AdminSubscribers from "./pages/AdminSubscribers";
 
 
 
@@ -85,6 +86,10 @@ const App = () => {
           <Route
             path="add-art"
             element={role === "admin" ? <Addnewcollec /> : <div>Not Authorized</div>}
+          />
+          <Route 
+          path="admin/subscribers"
+          element={role === "admin" ? <AdminSubscribers /> : <div>Not Authorized</div>}
           />
         
         </Route>

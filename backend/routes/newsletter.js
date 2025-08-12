@@ -2,8 +2,11 @@
 
 const express = require("express");
 const Newsletter = require("../models/Newsletter");
+const User = require("../models/user");
 const router = express.Router();
 const sendEmail = require("../utils/sendEmail");
+const { authenticateToken } = require("./userAuth");
+const { default: AdminSubscribers } = require("../../frontend/src/pages/AdminSubscribers");
 
 // POST - Subscribe
 // router.post("/", async (req, res) => {
@@ -75,6 +78,46 @@ router.get("/", async (req, res) => {
 // DELETE - Delete subscriber by ID (admin)
 router.delete("/:id", async (req, res) => {
   try {
+    await Newsletter.findByIdAndDelete(req.params.id);
+    res.json({ message: "Subscriber deleted" });
+  } catch (err) {
+    console.error("Error deleting subscriber:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+
+
+// for Admin-----------------------------
+
+// GET all subscribers - admin only
+router.get("/", authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.headers;  // user id from headers
+
+    const user = await User.findById(id);
+    if (!user || user.role !== "admin") {
+      return res.status(403).json({ message: "Access denied: Admins only" });
+    }
+
+    const subscribers = await Newsletter.find().sort({ date: -1 });
+    res.json(subscribers);
+  } catch (err) {
+    console.error("Error fetching subscribers:", err);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+// DELETE subscriber by ID - admin only
+router.delete("/:id", authenticateToken, async (req, res) => {
+  try {
+    const { id: userId } = req.headers; // user id from headers
+    const user = await User.findById(userId);
+
+    if (!user || user.role !== "admin") {
+      return res.status(403).json({ message: "Access denied: Admins only" });
+    }
+
     await Newsletter.findByIdAndDelete(req.params.id);
     res.json({ message: "Subscriber deleted" });
   } catch (err) {

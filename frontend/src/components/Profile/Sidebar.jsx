@@ -27,10 +27,6 @@ const Sidebar = ({ data }) => {
             Favorites
           </Link>
 
- <Link to="/profile/my-custom-requests" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
-      My Custom Requests
-    </Link>
-
           <Link to="/profile/orderHistory" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
             Order History
           </Link>
@@ -51,12 +47,12 @@ const Sidebar = ({ data }) => {
             All Orders
           </Link>
 
-         <Link to="/profile/view-requests" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
-      View Requests
-    </Link>
-
           <Link to="/profile/add-art" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
             Add New Collection
+          </Link>
+
+            <Link to="/admin/subscribers" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
+            Subscribers
           </Link>
         </div>
       )}
