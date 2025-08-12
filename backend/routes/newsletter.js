@@ -1,8 +1,11 @@
-// const express = require("express");
-// const Newsletter = require("../models/Newsletter");
-// const router = express.Router();
 
-// // POST - Subscribe
+
+const express = require("express");
+const Newsletter = require("../models/Newsletter");
+const router = express.Router();
+const sendEmail = require("../utils/sendEmail");
+
+// POST - Subscribe
 // router.post("/", async (req, res) => {
 //   try {
 //     const { email } = req.body;
@@ -26,13 +29,6 @@
 //   }
 // });
 
-// module.exports = router;
-
-const express = require("express");
-const Newsletter = require("../models/Newsletter");
-const router = express.Router();
-
-// POST - Subscribe
 router.post("/", async (req, res) => {
   try {
     const { email } = req.body;
@@ -49,12 +45,21 @@ router.post("/", async (req, res) => {
     const newSubscriber = new Newsletter({ email });
     await newSubscriber.save();
 
+    // Send confirmation email
+    await sendEmail({
+      to: email,
+      subject: "Thanks for subscribing to The Affinity Newsletter!",
+      text: `Hi! Thanks for subscribing to our newsletter. You'll now receive updates on new art, offers, and stories.`,
+      html: `<p>Hi!</p><p>Thanks for subscribing to our newsletter. You'll now receive updates on new art, offers, and stories.</p>`,
+    });
+
     res.status(201).json({ message: "Subscribed successfully!" });
   } catch (error) {
     console.error("Error subscribing:", error);
     res.status(500).json({ message: "Server error" });
   }
 });
+
 
 // GET - Get all subscribers (admin)
 router.get("/", async (req, res) => {
