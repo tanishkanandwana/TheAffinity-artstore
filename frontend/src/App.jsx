@@ -23,6 +23,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import ViewArtDetails from "./components/ViewArtDetails/ViewArtDetails";
 import AdminSubscribers from "./pages/AdminSubscribers";
+import SendNewsletterUpdate from "./pages/SendNewsletterUpdate";
 
 
 
@@ -73,7 +74,15 @@ const App = () => {
         <Route path="/category/:categoryName" element={<CategoryPage />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/cart" element={<Cart />} />
-
+             <Route 
+          path="/admin/subscribers"
+          element={role === "admin" ? <AdminSubscribers /> : <div>Not Authorized</div>}
+          />
+          <Route
+  path="/admin/send-newsletter"
+  element={role === "admin" ? <SendNewsletterUpdate /> : <div>Not Authorized</div>}
+/>
+        
         <Route path="/profile" element={<Profile />}>
           {role === "user" ? (
             <Route index element={<Favourites />} />
@@ -87,11 +96,11 @@ const App = () => {
             path="add-art"
             element={role === "admin" ? <Addnewcollec /> : <div>Not Authorized</div>}
           />
-          <Route 
-          path="admin/subscribers"
+          {/* <Route 
+          path="/admin/subscribers"
           element={role === "admin" ? <AdminSubscribers /> : <div>Not Authorized</div>}
           />
-        
+         */}
         </Route>
 
         <Route path="/signup" element={<SignUp />} />

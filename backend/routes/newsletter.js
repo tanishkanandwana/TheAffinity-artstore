@@ -126,5 +126,45 @@ router.delete("/:id", authenticateToken, async (req, res) => {
   }
 });
 
+
+router.post("/send-update", authenticateToken, async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const user = await User.findById(userId);
+
+    if (!user || user.role !== "admin") {
+      return res.status(403).json({ message: "Unauthorized. Admins only." });
+    }
+
+    const { subject, message } = req.body;
+    if (!subject || !message) {
+      return res.status(400).json({ message: "Subject and message are required" });
+    }
+
+    // Get all subscriber emails
+    const subscribers = await Newsletter.find({});
+    if (!subscribers.length) {
+      return res.status(400).json({ message: "No subscribers to send updates." });
+    }
+
+    // Send email to each subscriber (could optimize with Promise.all)
+    await Promise.all(
+      subscribers.map((sub) =>
+        sendEmail({
+          to: sub.email,
+          subject,
+          text: message,
+          html: `<p>${message}</p>`,
+        })
+      )
+    );
+
+    res.status(200).json({ message: "Update sent to all subscribers successfully." });
+  } catch (error) {
+    console.error("Error sending update emails:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 module.exports = router;
 
