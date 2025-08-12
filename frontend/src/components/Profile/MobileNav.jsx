@@ -17,11 +17,6 @@ const MobileNav = () => {
                   Order History
               </Link>
 
-           <Link 
-      to="/profile/custom-requests" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-      Custom Requests
-    </Link>
-
 
           <Link to="/profile/settings" className="text-lime-50 font-semibold w-full  text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
           Settings
@@ -34,11 +29,6 @@ const MobileNav = () => {
               All orders
               </Link>
       
-<Link to="/profile/custom-requests" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-  Custom Requests
-</Link>
-
-
               <Link 
               to="/profile/add-art" className="text-lime-50 font-semibold w-full text-center hover:bg-pink-900 rounded transition-all duration-600"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
                  Add new collection

@@ -57,42 +57,7 @@ const AllOrders = () => {
     }));
   };
 
-  // Called on clicking the submit button to update status
-  // const submitChanges = async (i) => {
-  //   const order = AllOrders[i];
-  //   const updatedStatus = orderStatusUpdates[order._id];
-
-  //   if (!updatedStatus || updatedStatus === order.status) {
-  //     // No change - do nothing or maybe close dropdown
-  //     setOptions(-1);
-  //     return;
-  //   }
-
-  //   try {
-  //     await axios.put(
-  //       `https://theaffinity-artstore.onrender.com/api/v1/update-status/${order._id}`,
-  //       { status: updatedStatus },
-  //       { headers }
-  //     );
-
-  //     Swal.fire({
-  //       icon: 'success',
-  //       title: 'Status updated successfully!',
-  //       toast: true,
-  //       position: 'top-end',
-  //       showConfirmButton: false,
-  //       timer: 2000,
-  //     });
-
-  //     // Update local order status immediately
-  //     const updatedOrders = [...AllOrders];
-  //     updatedOrders[i].status = updatedStatus;
-  //     setAllOrders(updatedOrders);
-  //     setOptions(-1);
-  //   } catch (err) {
-  //     console.error('Failed to update status:', err);
-  //   }
-  // };
+  
 const submitChanges = async (i) => {
   const id = AllOrders[i]._id;
   const updatedStatus = orderStatusUpdates[id]; // get updated status from state
