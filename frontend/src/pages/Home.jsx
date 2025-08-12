@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from "../components/Home/Hero"; 
 import RecentlyAdded from '../components/Home/RecentlyAdded';
-// import Newsletter from '../components/Home/Newsletter';
+import Newsletter from '../components/Home/Newsletter';
 import CarouselCategories from '../components/CarouselCategories';
 
 const Home = () => {
@@ -11,10 +11,10 @@ const Home = () => {
 <CarouselCategories />
 
       <RecentlyAdded />
-    {/* <Newsletter /> */}
+    <Newsletter />
     </div>
   )
 }
 
 export default Home
-//bg-[#d9b8a9] text-[#3e2b2e] #f0d6c9ff  #f3efefff   #a17863ff   #473027ff
+//bg-[#d9b8a9] text-[#3e2b2e] #f0d6c9ff  #e0cbb5ff   #a17863ff   #473027ff
