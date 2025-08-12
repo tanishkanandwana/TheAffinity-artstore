@@ -25,10 +25,14 @@ const SendNewsletterUpdate = () => {
         "https://theaffinity-artstore.onrender.com/api/v1/newsletter/send-update",
         { subject, message },
         {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            id: localStorage.getItem("id") || "",
-          },
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //     id: localStorage.getItem("id") || "",
+        //   },
+           headers: {
+      id: localStorage.getItem("id") || "",
+      authorization: `Bearer ${localStorage.getItem("token")}`, // ✅ lowercase
+    },
         }
       );
       setSuccessMsg(res.data.message);

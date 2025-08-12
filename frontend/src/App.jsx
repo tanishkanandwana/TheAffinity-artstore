@@ -27,6 +27,7 @@ import SendNewsletterUpdate from "./pages/SendNewsletterUpdate";
 
 
 
+
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -78,6 +79,7 @@ const App = () => {
           path="/admin/subscribers"
           element={role === "admin" ? <AdminSubscribers /> : <div>Not Authorized</div>}
           />
+       
           <Route
   path="/admin/send-newsletter"
   element={role === "admin" ? <SendNewsletterUpdate /> : <div>Not Authorized</div>}

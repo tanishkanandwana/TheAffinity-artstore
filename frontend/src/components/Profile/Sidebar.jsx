@@ -56,7 +56,7 @@ const Sidebar = ({ data }) => {
           </Link>
 
            <Link to="/admin/send-newsletter" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
-            Subscribers
+            Send Updates
           </Link>
         </div>
       )}

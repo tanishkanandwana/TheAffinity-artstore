@@ -19,7 +19,7 @@ const AllOrders = () => {
     id: localStorage.getItem('id'),
     authorization: `Bearer ${localStorage.getItem('token')}`,
   };
-
+  
   useEffect(() => {
     const fetchOrders = async () => {
       try {
