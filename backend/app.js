@@ -35,7 +35,7 @@ const Cart = require("./routes/cart");
 const Order = require("./routes/order");
 
 const newsletterRoutes = require("./routes/newsletter");
-const adminSubscribersRoutes = require("./routes/adminSubscribers");
+
 
 
 app.use("/api/v1/users", user);
