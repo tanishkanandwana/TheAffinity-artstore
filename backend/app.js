@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 
 const allowedOrigins = [
- "https://mellifluous-tapioca-399521.netlify.app",
+ "https://subtle-cat-f0e9bd.netlify.app",
   "http://localhost:5173",
 ];
 
