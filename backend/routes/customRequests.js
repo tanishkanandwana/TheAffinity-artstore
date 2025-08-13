@@ -4,7 +4,11 @@ const User = require("../models/user");
 const { authenticateToken } = require("./userAuth");
 const multer = require("multer");
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
+// const cloudinary = require("../config/cloudinary");
+// const cloudinary = require('../config/cloudinary');
 const cloudinary = require("../config/cloudinary");
+
+
 
 // Multer + Cloudinary storage config
 const storage = new CloudinaryStorage({
@@ -16,6 +20,7 @@ const storage = new CloudinaryStorage({
 });
 const upload = multer({ storage });
 
+
 // Create Custom Request (User)
 router.post(
   "/",
@@ -23,6 +28,11 @@ router.post(
   upload.array("referenceMedia", 5),
   async (req, res) => {
     try {
+      console.log("📥 Incoming request to /custom-requests");
+      console.log("Headers:", req.headers);
+      console.log("Body:", req.body);
+      console.log("Files:", req.files);
+
       const { id } = req.headers; // user id in header
       const user = await User.findById(id);
       if (!user) {
@@ -35,10 +45,23 @@ router.post(
         return res.status(400).json({ message: "All fields are required" });
       }
 
-      const referenceMedia = req.files.map((file) => ({
-        url: file.path,
-        public_id: file.filename,
-      }));
+      // ✅ Safe check for req.files
+      let referenceMedia = [];
+      if (req.files && req.files.length > 0) {
+        referenceMedia = req.files.map((file) => ({
+          url: file.path,
+          public_id: file.filename,
+        }));
+      }
+
+      console.log("📝 Saving custom request with data:", {
+        user: id,
+        pieceType,
+        description,
+        preferredDate,
+        contact,
+        referenceMedia,
+      });
 
       const customRequest = new CustomRequest({
         user: id,
@@ -51,13 +74,58 @@ router.post(
 
       await customRequest.save();
 
-      return res.status(201).json({ message: "Custom request created successfully", customRequest });
+      return res.status(201).json({
+        message: "Custom request created successfully",
+        customRequest,
+      });
     } catch (error) {
-      console.error("Error creating custom request:", error);
+      console.error("❌ Error creating custom request:", error);
       return res.status(500).json({ message: "Internal server error" });
     }
   }
 );
+// // Create Custom Request (User)
+// router.post(
+//   "/",
+//   authenticateToken,
+//   upload.array("referenceMedia", 5),
+//   async (req, res) => {
+//     try {
+//       const { id } = req.headers; // user id in header
+//       const user = await User.findById(id);
+//       if (!user) {
+//         return res.status(401).json({ message: "User not found" });
+//       }
+
+//       const { pieceType, description, preferredDate, contact } = req.body;
+
+//       if (!pieceType || !description || !preferredDate || !contact) {
+//         return res.status(400).json({ message: "All fields are required" });
+//       }
+
+//       const referenceMedia = req.files.map((file) => ({
+//         url: file.path,
+//         public_id: file.filename,
+//       }));
+
+//       const customRequest = new CustomRequest({
+//         user: id,
+//         pieceType,
+//         description,
+//         preferredDate,
+//         contact,
+//         referenceMedia,
+//       });
+
+//       await customRequest.save();
+
+//       return res.status(201).json({ message: "Custom request created successfully", customRequest });
+//     } catch (error) {
+//       console.error("Error creating custom request:", error);
+//       return res.status(500).json({ message: "Internal server error" });
+//     }
+//   }
+// );
 
 // Get logged-in user's custom requests
 router.get("/my", authenticateToken, async (req, res) => {

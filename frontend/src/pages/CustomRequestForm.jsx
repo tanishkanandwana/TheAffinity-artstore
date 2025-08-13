@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 const CustomRequestForm = () => {
   const [pieceType, setPieceType] = useState("");
   const [description, setDescription] = useState("");
@@ -14,50 +14,100 @@ const CustomRequestForm = () => {
     setFiles(e.target.files);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    if (!pieceType || !description || !preferredDate || !contact) {
-      alert("Please fill all the required fields");
-      return;
-    }
 
-    const formData = new FormData();
-    formData.append("pieceType", pieceType);
-    formData.append("description", description);
-    formData.append("preferredDate", preferredDate);
-    formData.append("contact", contact);
+//   const handleSubmit = async (e) => {
+//   e.preventDefault();
 
-    for (let i = 0; i < files.length; i++) {
-      formData.append("referenceMedia", files[i]);
-    }
+//   if (!pieceType || !description || !preferredDate || !contact) {
+//     alert("Please fill all the required fields");
+//     return;
+//   }
 
-    try {
-      const token = localStorage.getItem("token"); // Adjust according to your auth storage
-      const userId = localStorage.getItem("userId"); // same here
+//   const formData = new FormData();
+//   formData.append("pieceType", pieceType);
+//   formData.append("description", description);
+//   formData.append("preferredDate", preferredDate);
+//   formData.append("contact", contact);
+//  const headers ={
+//     id: localStorage.getItem("id"),
+//     authorization: `Bearer ${localStorage.getItem("token")}`
+//     ,
+//   };
+//   for (let i = 0; i < files.length; i++) {
+//     formData.append("referenceMedia", files[i]);
+//   }
 
-      const res = await fetch("/api/v1/customrequests", {
-        method: "POST",
+//   try {
+//     const token = localStorage.getItem("token"); // ✅ get, not set
+//     const userId = localStorage.getItem("userId"); // ✅ get, not set
+
+//     const response = await axios.post("https://theaffinity-artstore.onrender.com/api/v1/custom-requests", formData,{
+//      "Content-Type": "multipart/form-data"
+//     });
+
+//     let data;
+//     const contentType = response.headers.get("content-type");
+//     if (contentType && contentType.indexOf("application/json") !== -1) {
+//       data = await res.json();
+//     } else {
+//       const text = await res.text();
+//       throw new Error(`Unexpected response from server: ${text}`);
+//     }
+
+//     if (res.ok) {
+//       alert("Custom request created successfully!");
+//       navigate("/my-custom-requests");
+//     } else {
+//       alert(data.message || "Failed to create custom request");
+//     }
+//   } catch (error) {
+//     console.error("Error submitting custom request:", error);
+//     alert("Something went wrong. Please try again.");
+//   }
+// };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!pieceType || !description || !preferredDate || !contact) {
+    alert("Please fill all the required fields");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("pieceType", pieceType);
+  formData.append("description", description);
+  formData.append("preferredDate", preferredDate);
+  formData.append("contact", contact);
+
+  for (let i = 0; i < files.length; i++) {
+    formData.append("referenceMedia", files[i]);
+  }
+
+  const token = localStorage.getItem("token");
+  const userId = localStorage.getItem("userId");
+
+  try {
+    const response = await axios.post(
+      "https://theaffinity-artstore.onrender.com/api/v1/custom-requests",
+      formData,
+      {
         headers: {
           Authorization: `Bearer ${token}`,
-          id: userId, // your backend expects user id here
+          id: userId,
+          "Content-Type": "multipart/form-data",
         },
-        body: formData,
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        alert("Custom request created successfully!");
-        navigate("/my-custom-requests"); // or wherever you want to redirect
-      } else {
-        alert(data.message || "Failed to create custom request");
       }
-    } catch (error) {
-      console.error("Error submitting custom request:", error);
-      alert("Something went wrong. Please try again.");
-    }
-  };
+    );
+
+    alert("Custom request created successfully!");
+    navigate("/my-custom-requests");
+  } catch (error) {
+    console.error("Error submitting custom request:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
+
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white rounded shadow mt-10">
