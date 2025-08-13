@@ -20,38 +20,18 @@ const toSlug = (text) =>
   text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
 const CarouselCategories = () => {
-  // const settings = {
-  //   dots: false,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 4,       // show 4 circles at once on desktop
-  //   slidesToScroll: 1,
-  //   responsive: [
-  //     { breakpoint: 1024, settings: { slidesToShow: 3 } },
-  //     { breakpoint: 600, settings: { slidesToShow: 2 } },
-  //     { breakpoint: 480, settings: { slidesToShow: 1 } },
-  //   ],
-  // };
- const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 3 } },
-    { breakpoint: 768, settings: { slidesToShow: 2 } },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "0px",
-      },
-    },
-  ],
-};
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,       // show 4 circles at once on desktop
+    slidesToScroll: 1,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 600, settings: { slidesToShow: 2 } },
+      { breakpoint: 480, settings: { slidesToShow: 1 } },
+    ],
+  };
 
   return (
     <div className="px-4 md:px-8 mt-16 z-20 relative">
@@ -87,5 +67,6 @@ const CarouselCategories = () => {
 };
 
 export default CarouselCategories;
+
 
 
