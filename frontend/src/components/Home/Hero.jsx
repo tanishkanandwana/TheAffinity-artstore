@@ -107,7 +107,7 @@ const Hero = () => {
 
           {/* Customize Yours Button */}
           <Link
-            to=""
+            to="/custom-request"
             className="
               relative
               text-base sm:text-lg md:text-xl lg:text-2xl

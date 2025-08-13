@@ -1,60 +1,29 @@
 const mongoose = require("mongoose");
 
-const customRequestSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Types.ObjectId,
-    ref: "user",  // same collection name as your User model
-    required: true,
-  },
-  pieceType: {
-    type: String,
-    required: true,
-  },
-  preferredDate: {
-    type: Date,
-  },
-  contact: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-  },
-  quantity: {
-    type: Number,
-    default: 1,
-  },
-  referenceMedia: [
-    {
-      type: String, // URLs or Cloudinary public IDs of images/videos uploaded by user
+const customRequestSchema = new mongoose.Schema(
+  {
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    pieceType: { type: String, required: true },
+    description: { type: String, required: true },
+    preferredDate: { type: Date, required: true },
+    contact: { type: String, required: true },
+    referenceMedia: [
+      { url: String, public_id: String }
+    ],
+    status: {
+      type: String,
+      enum: ["Pending", "In Progress", "Completed"],
+      default: "Pending",
     },
-  ],
-  status: {
-    type: String,
-    enum: ["pending", "reviewed", "completed"],
-    default: "pending",
-  },
-  adminMessage: {
-    type: String,
-    default: "",
-  },
-  adminOptions: [
-    {
-      title: String, // description/title of each option provided by admin
-      files: [String], // array of URLs/public IDs for images/videos admin uploads
-      price: Number,  // optional, if you want to associate price per option
-    },
-  ],
-  requestedMoreOptions: [
-    {
-      description: String,
-      referenceMedia: [String], // user can request more options with description & reference media
-      createdAt: {
-        type: Date,
-        default: Date.now,
+    adminResponses: [
+      {
+        message: String,
+        sampleMedia: [{ url: String, public_id: String }],
+        date: { type: Date, default: Date.now },
       },
-    },
-  ],
-}, { timestamps: true });
+    ],
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("CustomRequest", customRequestSchema);
