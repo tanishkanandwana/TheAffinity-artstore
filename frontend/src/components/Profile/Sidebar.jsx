@@ -31,7 +31,9 @@ const Sidebar = ({ data }) => {
             Order History
           </Link>
 
-        
+          <Link to="/my-custom-requests" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
+            My Custom Requets
+          </Link>
           
 
           <Link to="/profile/settings" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
@@ -57,6 +59,10 @@ const Sidebar = ({ data }) => {
 
            <Link to="/admin/send-newsletter" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
             Send Updates
+          </Link>
+
+            <Link to="/admin/custom-requests" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
+            All requests
           </Link>
         </div>
       )}

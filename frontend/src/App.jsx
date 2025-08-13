@@ -24,9 +24,9 @@ import ContactUs from "./pages/ContactUs";
 import ViewArtDetails from "./components/ViewArtDetails/ViewArtDetails";
 import AdminSubscribers from "./pages/AdminSubscribers";
 import SendNewsletterUpdate from "./pages/SendNewsletterUpdate";
-
-
-
+import CustomRequestForm from "./pages/CustomRequestForm";
+import MyCustomRequests from "./pages/MyCustomRequests";
+import AdminCustomRequests from "./pages/AdminCustomRequests";
 
 axios.interceptors.response.use(
   (response) => response,
@@ -75,6 +75,9 @@ const App = () => {
         <Route path="/category/:categoryName" element={<CategoryPage />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/custom-request" element={<CustomRequestForm />} />
+        <Route path="/my-custom-requests" element={<MyCustomRequests />} />
+        <Route path="/admin/custom-requests" element={<AdminCustomRequests />} />
              <Route 
           path="/admin/subscribers"
           element={role === "admin" ? <AdminSubscribers /> : <div>Not Authorized</div>}
