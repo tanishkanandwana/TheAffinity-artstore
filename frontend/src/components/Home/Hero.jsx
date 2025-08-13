@@ -39,7 +39,7 @@ const Hero = () => {
   };
 
   return (
-   <div className="relative w-full h-[60vh] sm:h-[85vh] overflow-hidden flex items-center justify-center">
+   <div className="relative w-full h-[70vh] sm:h-[85vh] overflow-hidden flex items-center justify-center">
       
       {/* Hero Image (centered) */}
       <motion.img
