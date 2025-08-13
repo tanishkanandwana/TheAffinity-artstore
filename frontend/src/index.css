@@ -13,6 +13,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .slick-slide {
+    width: 100% !important;
+  }
+}
+
 /* ✅ Custom styles */
 .font-greatvibes {
   font-family: 'Great Vibes', cursive;
