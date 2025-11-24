@@ -63,7 +63,7 @@ const Footer = () => {
             Email: affinityarts@gmail.com
           </p>
       <a
-            href="https://www.instagram.com/_theaffinity_"
+            href="https://www.instagram.com/theaffinityarts"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-soft-glow transition duration-300 mt-2"

@@ -24,7 +24,7 @@ import ContactUs from "./pages/ContactUs";
 import ViewArtDetails from "./components/ViewArtDetails/ViewArtDetails";
 import AdminSubscribers from "./pages/AdminSubscribers";
 import SendNewsletterUpdate from "./pages/SendNewsletterUpdate";
-
+import CustomRequestForm from "./pages/CustomRequestForm"
 
 axios.interceptors.response.use(
   (response) => response,
@@ -73,6 +73,7 @@ const App = () => {
         <Route path="/category/:categoryName" element={<CategoryPage />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/cart" element={<Cart />} />
+         <Route path="/custom-request" element={<CustomRequestForm />} />
       
              <Route 
           path="/admin/subscribers"

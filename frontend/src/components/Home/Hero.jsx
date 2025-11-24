@@ -14,41 +14,47 @@ const Hero = () => {
       heading: 'The Affinity',
       subheading: 'Art that celebrates, Gifts that connect',
     },
-    {
-      image: './image1',
-      heading: 'Gifts with Soul',
-      subheading: 'Where art meets heart',
-    },
-    {
-      image: './image2',
-      heading: 'Curated for You',
-      subheading: 'Personalized gifting, timeless touch',
-    }
+    // {
+    //   image: './brand2.png',
+    //   heading: 'Gifts with Soul',
+    //   subheading: 'Where art meets heart',
+    // }
   ];
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    fade: true,
-    arrows: false,
-  };
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 1000,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 4000,
+  //   fade: true,
+  //   arrows: false,
+  // };
 
   return (
    <div className="relative w-full h-[70vh] sm:h-[85vh] overflow-hidden flex items-center justify-center">
       
       {/* Hero Image (centered) */}
-      <motion.img
+      {/* <motion.img
         src="./Brand.png"
+      
         alt="hero"
-        className="absolute w-auto h-[80%] sm:h-[100%] max-h-[80vh] object-contain  z-0 opacity-80 top-6 sm:top-0"
+        className="absolute w-auto h-[80%] sm:h-[100%] max-h-[80vh] object-contain  z-0 opacity-80 top-6 sm:top-0 scale-110"
+        
         initial={{ scale: 1.2, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        animate={{ scale: 1, opacity: 1 }} 
         transition={{ duration: 1 }}
+      /> */}
+          <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src="/BTS.mp4"
+        //  src="/BTS.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
       />
 
       {/* Optional dark/gradient overlay */}
@@ -133,3 +139,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

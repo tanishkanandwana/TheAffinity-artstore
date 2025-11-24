@@ -36,7 +36,7 @@ const Cart = require("./routes/cart");
 const Order = require("./routes/order");
 
 const newsletterRoutes = require("./routes/newsletter");
-
+const customRequestRoutes = require("./routes/customRequestRoutes");
 
 
 app.use("/api/v1/users", user);
@@ -44,7 +44,7 @@ app.use("/api/v1/arts", Arts);
 app.use("/api/v1/favourites", favourite);
 app.use("/api/v1/cart", Cart);
 app.use("/api/v1/orders", Order);
-
+app.use("/api/v1/custom-requests", customRequestRoutes);
 app.use("/api/v1/newsletter", newsletterRoutes);
 
 

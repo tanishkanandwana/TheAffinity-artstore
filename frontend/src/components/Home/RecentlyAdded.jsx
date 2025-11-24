@@ -82,7 +82,7 @@ const RecentlyAdded = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Most loved Collections...  
+          Our Latest Collections...  
         </motion.h4>
       </div>
 
