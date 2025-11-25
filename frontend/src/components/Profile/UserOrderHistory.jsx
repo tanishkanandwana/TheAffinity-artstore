@@ -36,8 +36,8 @@ const UserOrderHistory = () => {
    {OrderHistory && OrderHistory.length ===0 && (
     <div className='h-[80vh] p-4 text-lime-100'>
       <div className='h-[100%] flex flex-col items-center justify-center'>
-        <h1 className='text-5xl font-semibold text-pink-800 mb-8'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>No Order History</h1>
-        <img src={dataimage} alt="" className='h-[20vh] mb-8' />
+        <h1 className='text-xl font-semibold text-lime-50  mb-10'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>You have not ordered anything yet :(</h1>
+        {/* <img src={dataimage} alt="" className='h-[20vh] mb-8' /> */}
 
       </div>
 

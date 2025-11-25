@@ -76,7 +76,7 @@ const RecentlyAdded = () => {
     <div className="-mt-6 px-3 sm:mt-0 sm:px-6 md:px-8 z-30 relative">
       <div className='flex justify-center'>
         <motion.h4
-          className="text-3xl sm:text-4xl text-white font-semibold text-center mt-20"
+          className="text-2xl sm:text-3xl text-[#4B001F]  font-semibold text-center mt-20"
          style={{ fontFamily: "'Cinzel Decorative', cursive" }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

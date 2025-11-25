@@ -37,7 +37,7 @@ const Hero = () => {
    <div className="relative w-full h-[70vh] sm:h-[85vh] overflow-hidden flex items-center justify-center">
       
       {/* Hero Image (centered) */}
-      {/* <motion.img
+      <motion.img
         src="./Brand.png"
       
         alt="hero"
@@ -46,8 +46,8 @@ const Hero = () => {
         initial={{ scale: 1.2, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }} 
         transition={{ duration: 1 }}
-      /> */}
-          <video
+      />
+          {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src="/BTS.mp4"
         //  src="/BTS.mp4"
@@ -55,7 +55,7 @@ const Hero = () => {
         loop
         muted
         playsInline
-      />
+      /> */}
 
       {/* Optional dark/gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-lime/100 via-black/30 to-pink/40 z-10  sm:min-h-[80vh]"></div>

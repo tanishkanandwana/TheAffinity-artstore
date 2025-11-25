@@ -25,18 +25,32 @@ const toSlug = (text) =>
   text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
 const CarouselCategories = () => {
+  // const settings = {
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 4,       // show 4 circles at once on desktop
+  //   slidesToScroll: 1,
+  //   responsive: [
+  //     { breakpoint: 1024, settings: { slidesToShow: 3 } },
+  //     { breakpoint: 600, settings: { slidesToShow: 2 } },
+  //     { breakpoint: 480, settings: { slidesToShow: 1 } },
+  //   ],
+  // };
+
   const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,       // show 4 circles at once on desktop
-    slidesToScroll: 1,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 3 } },
-      { breakpoint: 600, settings: { slidesToShow: 2 } },
-      { breakpoint: 480, settings: { slidesToShow: 1 } },
-    ],
-  };
+  dots: false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 2.2,
+  slidesToScroll: 1,
+  responsive: [
+    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+    { breakpoint: 768, settings: { slidesToShow: 2.2 } },
+    { breakpoint: 480, settings: { slidesToShow: 1.4 } },
+  ],
+};
+
 
   return (
     <div className="px-4 md:px-8 mt-16 z-20 relative">
@@ -44,25 +58,36 @@ const CarouselCategories = () => {
         className="text-2xl sm:text-3xl text-center text-[#4B001F] font-semibold mb-10"
        style={{ fontFamily: "'Cinzel Decorative', cursive" }}
       >
-        Explore Gifts by Category
+        Explore by Category
       </h2>
       <Slider {...settings}>
         {categories.map((cat, i) => (
-          <div key={i} className="!flex !flex-col !items-center !justify-center text-center px-2">
+          <div key={i} className="!flex !flex-col !items-center !justify-center text-center px-2"
+          style={{ minWidth: "150px" }}   // ADD THIS
+          >
 
             <Link to={`/category/${encodeURIComponent(cat.title)}`} className="group">
 
               <img
                 src={cat.img}
                 alt={cat.title}
-                className="rounded-full w-36 h-36 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                // className="rounded-full w-28 h-28 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                className="rounded-full w-28 h-28 sm:w-36 sm:h-36 object-cover shadow-lg 
+                transition-transform duration-300 group-hover:scale-105 cursor-pointer"
               />
-              <p
+              {/* <p
                 className="mt-5 text-[#4B001F] font-semibold text-lg text-center"
               style={{ fontFamily: "'Cinzel Decorative', cursive" }}
               >
                 {cat.title}
-              </p>
+              </p> */}
+              <p
+              className="mt-3 text-[#4B001F] font-semibold text-sm sm:text-lg text-center"
+              style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+               >
+  {cat.title}
+</p>
+
             </Link>
           </div>
         ))}
