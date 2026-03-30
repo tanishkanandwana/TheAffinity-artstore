@@ -46,8 +46,8 @@ const Hero = () => {
         initial={{ scale: 1.2, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }} 
         transition={{ duration: 1 }}
-      />
-          {/* <video
+      /> 
+           {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src="/BTS.mp4"
         //  src="/BTS.mp4"
@@ -55,8 +55,17 @@ const Hero = () => {
         loop
         muted
         playsInline
+      />  */}
+{/* 
+  <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        src="/gift-wrapping-woman-tie-a-white-ribbon-bow.mp4"
+        //  src="/BTS.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
       /> */}
-
       {/* Optional dark/gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-lime/100 via-black/30 to-pink/40 z-10  sm:min-h-[80vh]"></div>
 
@@ -72,8 +81,19 @@ const Hero = () => {
            THE AFFINITY
         </motion.h1>
 
+
+               <motion.p
+          className="mt-4 text-lg sm:text-Xl md:text-2xl text-white font-medium soft-glow"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+        >
+          WELCOMES YOU 
+        </motion.p>
+
         <motion.p
-          className="mt-4 text-lg sm:text-xl md:text-2xl text-white font-medium soft-glow"
+          className="mt-4 text-lg sm:text-l md:text-xl text-white font-medium soft-glow"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
