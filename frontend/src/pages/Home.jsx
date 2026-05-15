@@ -6,8 +6,10 @@ import CarouselCategories from '../components/CarouselCategories';
 
 const Home = () => {
   return (
-    <div className="bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da] text-white px-10 py-8 "style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+    <div className="bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da] text-white"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
       <Hero />
+
+        <div className="px-10 py-8"></div>
 <CarouselCategories />
 
       <RecentlyAdded />
