@@ -63,7 +63,7 @@ const Cart = () => {
     {Cart && Cart.length === 0 && (
       <div className='h-screen'>
         <div className='h-[100%] flex items-center justify-center flex-col'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-          <h1 className='text-3xl lg:text-4xl font-semibold text-white' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Empty Cart</h1>
+          <h1 className='text-3xl lg:text-4xl font-semibold text-[#661638]' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Empty Cart</h1>
           {/* <img 
           src={emptyCartImage }
            alt="empty cart"
@@ -82,7 +82,7 @@ const Cart = () => {
     )}
     {Cart && Cart.length > 0 && (
     <>
-    <h1 className='text-4xl flex items-center justify-center font-semibold text-[#4B001F] mb-8'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>My Cart<span className='ms-2 mt-1'><CiShoppingCart /></span></h1>
+    <h1 className='text-4xl flex items-center justify-center font-semibold text-[#661638] mb-8'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>My Cart<span className='ms-2 mt-1'><CiShoppingCart /></span></h1>
    {Cart.map((items, i) => (
   <div
     key={i}

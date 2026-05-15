@@ -11,15 +11,20 @@ const CustomRequest = require("../models/CustomRequest");
 // @desc Create a new custom request
 // @route POST /api/v1/custom-requests
 // @access Private (only logged in users)
-router.post("/", authenticateToken, async (req, res) => {
+// router.post("/", authenticateToken, async (req, res) => {
+  router.post(
+  "/",
+  authenticateToken,
+  upload.single("file"),
+  async (req, res) => {
   try {
     const { artworkType, description, preferredDate, contact } = req.body;
 
     // Cloudinary file (if attached through multer)
     let fileUrl = "";
-    if (req.file && req.file.path) {
-      fileUrl = req.file.path;
-    }
+   if (req.file) {
+  fileUrl = req.file.path;
+}
 
     const newRequest = await CustomRequest.create({
       user: req.user.id, // from JWT middleware

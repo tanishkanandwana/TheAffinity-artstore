@@ -34,14 +34,15 @@ const Hero = () => {
   // };
 
   return (
-   <div className="relative w-full h-[70vh] sm:h-[85vh] overflow-hidden flex items-center justify-center">
+  //  <div className="relative w-full h-[70vh] sm:h-[85vh] overflow-hidden flex items-center justify-center">
+    <div className="relative w-screen h-screen overflow-hidden flex items-center justify-center">
       
       {/* Hero Image (centered) */}
       <motion.img
-        src="./Brand.png"
+        src="./dp.png"
       
         alt="hero"
-        className="absolute w-auto h-[80%] sm:h-[100%] max-h-[80vh] object-contain  z-0 opacity-80 top-6 sm:top-0 scale-110"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
         
         initial={{ scale: 1.2, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }} 
@@ -67,7 +68,7 @@ const Hero = () => {
         playsInline
       /> */}
       {/* Optional dark/gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-lime/100 via-black/30 to-pink/40 z-10  sm:min-h-[80vh]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/40 z-10  sm:min-h-[80vh]"></div>
 
       {/* Centered Text Content */}
     <div className="relative z-20 flex flex-col justify-center sm:justify-center items-center text-center min-h-[80vh] sm:min-h-[70vh] px-4 pt-8 sm:pt-0">
@@ -82,15 +83,15 @@ const Hero = () => {
         </motion.h1>
 
 
-               <motion.p
+               {/* <motion.p
           className="mt-4 text-lg sm:text-Xl md:text-2xl text-white font-medium soft-glow"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
-          WELCOMES YOU 
-        </motion.p>
+          Gift Hampers | Preservation
+        </motion.p> */}
 
         <motion.p
           className="mt-4 text-lg sm:text-l md:text-xl text-white font-medium soft-glow"
@@ -99,7 +100,7 @@ const Hero = () => {
           transition={{ delay: 0.3, duration: 0.8 }}
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
-          Art that celebrates, Gifts that connect 
+          Art that celebrates, Gifts that connect | since 2024
         </motion.p>
 
         <motion.div
