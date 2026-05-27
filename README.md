@@ -13,5 +13,5 @@ React • Tailwind CSS • Node.js • Express • MongoDB(atlas) • JWT
 
 ## 🌐 Live Links
 
-- **Frontend (Netlify)**: [https://fantastic-trifle-191817.netlify.app/]
+- **Frontend (Netlify)**: [https://tubular-brigadeiros-966634.netlify.app/]
 
