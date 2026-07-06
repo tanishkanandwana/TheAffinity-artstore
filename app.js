@@ -3,9 +3,8 @@ const cors = require("cors");
 const app = express();
 
 const allowedOrigins = [
-  "https://tubular-brigadeiros-966634.netlify.app",
+  "https://euphonious-cascaron-790287.netlify.app",
   "https://celadon-florentine-b0fac0.netlify.app",
-  "https://fantastic-trifle-191817.netlify.app",
   "http://localhost:5173"
 ];
 
