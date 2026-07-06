@@ -5,12 +5,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const categories = [
+   { title: "Rakhi", img: "rakhi.jpg" },
     { title: "Crochet", img: "crochet.jpg" },
+
       { title: "Resin", img: "resin.jpg" },
        { title: "phone-cases", img: "phonecase.jpg" },
         { title: "Decor Essentials", img: "decor.jpg" },
-    { title: "Bouquets & Hampers", img: "bouquet.jpg" },
-  { title: "Polaroids", img: "polaroid.jpg" },
+    { title: "Bouquets", img: "bouquet.jpg" },
+  { title: "Paintings", img: "polaroid.jpg" },
   { title: "Bookmarks", img: "bookmark.jpg" },
   { title: "Customised-Gifts", img: "hampers.jpg" },
   { title: "Keychains", img: "Keychain.jpg" },

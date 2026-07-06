@@ -19,4 +19,4 @@ const Home = () => {
 }
 
 export default Home
-//bg-[#d9b8a9] text-[#3e2b2e] #f0d6c9ff  #e0cbb5ff   #a17863ff   #473027ff
+//bg-[#d9b8a9] text-[#3e2b2e] rgb(254, 248, 245)  #e0cbb5ff   #a17863ff   #473027ff

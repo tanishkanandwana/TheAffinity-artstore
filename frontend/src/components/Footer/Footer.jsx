@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+// import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -58,10 +59,14 @@ const Footer = () => {
         {/* Instagram Link */}
         <div>
         
-        
-          <p className="mt-10"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-            Email: affinityarts@gmail.com
-          </p>
+        <a
+  href="mailto:affinityarts@gmail.com"
+  className="flex items-center gap-2 mt-10 hover:text-soft-glow transition duration-300"
+  style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+>
+  <FaEnvelope className="text-l text-[#895a4f]" />
+  affinityarts@gmail.com
+</a>
       <a
             href="https://www.instagram.com/theaffinityarts"
             target="_blank"
@@ -69,20 +74,22 @@ const Footer = () => {
             className="flex items-center gap-2 hover:text-soft-glow transition duration-300 mt-2"
             style={{ fontFamily: "'Cinzel Decorative', cursive" }}
           >
-            <FaInstagram className="text-xl" />
-             Our Instagram
+            <FaInstagram className="text-l text-pink-500" />
+             know us more
           </a>
 
-        <a
+       
+
+         <a
   href="https://wa.me/918854913366?text=Hi%20I%20am%20interested%20in%20ordering%20something%20from%20The%20Affinity"
   target="_blank"
   rel="noopener noreferrer"
   className="flex items-center gap-2 hover:text-soft-glow transition duration-300 mt-2"
   style={{ fontFamily: "'Cinzel Decorative', cursive" }}
 >
-  💬 Chat on WhatsApp
-</a>
-            
+  <FaWhatsapp className="text-l text-green-500" />
+  Connect with us
+</a>   
         </div>
 
         {/* Newsletter Placeholder (optional) */}
