@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 const categories = [
    { title: "Rakhi", img: "rakhi.jpg" },
+   { title: "Diwali", img: "diwali.jpg" },
+      { title: "Birthday", img: "bday.jpg" },
     { title: "Crochet", img: "crochet.jpg" },
 
       { title: "Resin", img: "resin.jpg" },
