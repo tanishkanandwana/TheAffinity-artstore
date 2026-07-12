@@ -1,7 +1,4 @@
 
-
-
-
 const express = require("express");
 const Newsletter = require("../models/Newsletter");
 const User = require("../models/user");
