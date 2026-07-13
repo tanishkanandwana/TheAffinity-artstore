@@ -4,6 +4,8 @@ const app = express();
 
 const allowedOrigins = [
   "https://euphonious-cascaron-790287.netlify.app",
+  "https://theaffinityarts.com",
+  "https://www.theaffinityarts.com",
   "https://celadon-florentine-b0fac0.netlify.app",
   "http://localhost:5173"
 ];
