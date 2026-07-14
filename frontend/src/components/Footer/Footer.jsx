@@ -9,13 +9,13 @@ const Footer = () => {
       {/* Brand Title & Tagline */}
       <div className="mb-2">
         <h1
-          className="text-4xl font-semibold flex justify-end"
+          className="text-2xl font-semibold flex justify-end"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
           THE AFFINITY
         </h1>
         <p
-          className="text-md italic mt-1 flex justify-end"
+          className="text-xs italic mt-1 flex justify-end"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
           “Art that Celebrates, Gifts that Connect”
@@ -115,7 +115,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <h1
-        className="text-sm font-semibold text-center"
+        className="text-[10px] font-semibold text-center"
         style={{ fontFamily: "'Cinzel Decorative', cursive" }}
       >
         &copy; 2025 THE AFFINITY. All rights reserved.

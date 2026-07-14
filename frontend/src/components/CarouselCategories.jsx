@@ -6,12 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 
 const categories = [
    { title: "Rakhi", img: "rakhi.jpg" },
-   { title: "Diwali", img: "diwali.jpg" },
-      { title: "Birthday", img: "bday.jpg" },
+  //  { title: "Diwali", img: "diwali.jpg" },
+      // { title: "Birthday", img: "bday.jpg" },
     { title: "Crochet", img: "crochet.jpg" },
 
       { title: "Resin", img: "resin.jpg" },
-       { title: "phone-cases", img: "phonecase.jpg" },
+      //  { title: "phone-cases", img: "phonecase.jpg" },
         { title: "Decor Essentials", img: "decor.jpg" },
     { title: "Bouquets", img: "bouquet.jpg" },
   { title: "Paintings", img: "polaroid.jpg" },
