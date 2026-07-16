@@ -37,6 +37,7 @@ const Arts = require("./routes/art");
 const favourite = require("./routes/favourite");
 const Cart = require("./routes/cart");
 const Order = require("./routes/order");
+const uploadRoutes = require("./routes/upload");
 
 const newsletterRoutes = require("./routes/newsletter");
 const customRequestRoutes = require("./routes/customRequestRoutes");
@@ -49,6 +50,7 @@ app.use("/api/v1/cart", Cart);
 app.use("/api/v1/orders", Order);
 app.use("/api/v1/custom-requests", customRequestRoutes);
 app.use("/api/v1/newsletter", newsletterRoutes);
+app.use("/api/v1/upload", uploadRoutes);
 
 
 

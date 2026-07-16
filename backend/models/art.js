@@ -51,6 +51,10 @@ const art= new mongoose.Schema({
     required:true,
  },
 
+ requiresPhoto: {
+  type: Boolean,
+  default: false,
+},
  //new
    reviews: [review],
     rating: { type: Number, default: 0 },

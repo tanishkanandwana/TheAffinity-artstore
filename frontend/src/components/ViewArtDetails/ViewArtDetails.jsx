@@ -22,6 +22,7 @@ const [userRating, setUserRating] = useState(0);
 const [comment, setComment] = useState("");
 const [reviewSubmitted, setReviewSubmitted] = useState(false);
  const [Data, setData] = useState();
+const [files, setFiles] = useState([]);
 
 const backendBaseURL = import.meta.env.VITE_BACKEND_URL || "http://localhost:1000";
 const fixedImageUrl =
@@ -117,6 +118,57 @@ const handleReviewSubmit = async () => {
     
   }
 
+  const handleFileChange = (e) => {
+  setFiles([...e.target.files]);
+};
+
+const uploadPhotos = async () => {
+  if (files.length === 0) {
+    Swal.fire("Error", "Please select images first", "error");
+    return;
+  }
+
+  const formData = new FormData();
+
+  files.forEach((file) => {
+    formData.append("images", file);
+  });
+
+  try {
+    const response = await axios.post(
+      `https://theaffinity-artstore.onrender.com/api/v1/upload/upload-images/${id}`,
+      formData,
+      {
+        headers: {
+          id: localStorage.getItem("id"),
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    console.log(response.data);
+
+    Swal.fire({
+      icon: "success",
+      title: "Photos uploaded successfully!",
+      toast: true,
+      position: "top-end",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    Swal.fire(
+      "Error",
+      "Photo upload failed",
+      "error"
+    );
+  }
+};
+
   const handleCart = async()=>{
     const response = await axios.put("https://theaffinity-artstore.onrender.com/api/v1/cart/add-to-cart",{},{headers})
     // alert(response.data.message);
@@ -191,6 +243,30 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
          <p className="text-[#473027ff] mt-10 text-xl font-seibold"  style={{ fontFamily: "'Marcellus', serif" }}>{Data.desc}</p>
             {/* <p className="text-lime-100 mt-1 text-lg">{Data.maker}</p> */}
         <p className="mt-4 text-lime-700 text-2xl  font-semibold"  style={{ fontFamily: "'Marcellus', serif" }}>₹ {Data.price}</p>
+
+        <div className="mt-6 bg-white p-4 rounded-lg shadow">
+  <h3
+    className="text-[#4B001F] font-semibold mb-2"
+    style={{ fontFamily: "'Marcellus', serif" }}
+  >
+    Upload Photos for Customisation
+  </h3>
+
+  <input
+    type="file"
+    multiple
+    accept="image/*"
+    onChange={handleFileChange}
+    className="mb-3 w-full"
+  />
+
+  <button
+    onClick={uploadPhotos}
+    className="bg-[#661638] text-white px-4 py-2 rounded hover:bg-[#4B001F]"
+  >
+    Upload Photos
+  </button>
+</div>
 
 
                 {/* testing just testing */}
