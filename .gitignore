@@ -9,3 +9,5 @@ secret.js
 
 
 backend/git-filter-repo/
+node_modules/
+.vscode/
