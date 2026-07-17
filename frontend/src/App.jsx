@@ -25,7 +25,9 @@ import ViewArtDetails from "./components/ViewArtDetails/ViewArtDetails";
 import AdminSubscribers from "./pages/AdminSubscribers";
 import SendNewsletterUpdate from "./pages/SendNewsletterUpdate";
 
-import CustomRequestForm from "./pages/CustomRequestForm"
+import CustomRequestForm from "./pages/CustomRequestForm";
+import AdminCustomRequests from "./pages/AdminCustomRequests";
+import MyCustomRequests from "./pages/MyCustomRequests";
 
 axios.interceptors.response.use(
   (response) => response,
@@ -111,6 +113,19 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/updateArt/:id" element={<UpdateArt />} />
         <Route path="/view-art-details/:id" element={<ViewArtDetails />} />
+        <Route
+  path="/admin/custom-requests"
+  element={
+    role === "admin"
+      ? <AdminCustomRequests />
+      : <div>Not Authorized</div>
+  }
+/>
+
+<Route
+  path="/my-custom-requests"
+  element={<MyCustomRequests />}
+/>
       
       </Routes>
       <Footer />

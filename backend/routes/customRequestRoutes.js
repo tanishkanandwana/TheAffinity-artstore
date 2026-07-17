@@ -110,9 +110,19 @@ router.get("/", authenticateToken, isAdmin, async (req, res) => {
       success: true,
       data: requests,
     });
-  } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
-  }
+  } 
+  // catch (error) {
+  //   res.status(500).json({ success: false, message: error.message });
+  // }
+  catch (error) {
+  console.error("CUSTOM REQUEST ADMIN ERROR:");
+  console.error(error);
+
+  res.status(500).json({
+    success: false,
+    message: error.message,
+  });
+}
 });
 
 // @desc Update a custom request (status/response)
