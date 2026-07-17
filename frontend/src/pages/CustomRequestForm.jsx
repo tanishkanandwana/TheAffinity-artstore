@@ -52,7 +52,7 @@ const CustomRequestForm = () => {
       }
 
       await axios.post(
-        "https://theaffinity-artstore.onrender.com/api/v1/custom-request",
+        "https://theaffinity-artstore.onrender.com/api/v1/custom-requests",
        
         data,
         {

@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const upload = require("../middlewares/upload");
+// const upload = require("../middlewares/upload");
+const uploadImages = require("../middlewares/uploadImages");
+const cloudinary = require("../config/cloudinary");
+const streamifier = require("streamifier");
 // const cloudinary = require("../utils/cloudinary");
 // const authenticateToken = require("../middleware/authenticateToken");
 const { authenticateToken } = require("./userAuth");
@@ -15,17 +18,37 @@ const CustomRequest = require("../models/CustomRequest");
   router.post(
   "/",
   authenticateToken,
-  upload.single("file"),
+  // upload.single("file"),
+  uploadImages.single("file"),
   async (req, res) => {
   try {
     const { artworkType, description, preferredDate, contact } = req.body;
 
     // Cloudinary file (if attached through multer)
-    let fileUrl = "";
-   if (req.file) {
-  fileUrl = req.file.path;
-}
+//     let fileUrl = "";
+//    if (req.file) {
+//   fileUrl = req.file.path;
+// }
 
+let fileUrl = "";
+
+if (req.file) {
+  const result = await new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      {
+        folder: "custom-requests",
+      },
+      (error, result) => {
+        if (error) reject(error);
+        else resolve(result);
+      }
+    );
+
+    streamifier.createReadStream(req.file.buffer).pipe(stream);
+  });
+
+  fileUrl = result.secure_url;
+}
     const newRequest = await CustomRequest.create({
       user: req.user.id, // from JWT middleware
       artworkType,
