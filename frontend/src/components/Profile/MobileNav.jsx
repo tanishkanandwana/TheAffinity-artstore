@@ -69,6 +69,14 @@ const MobileNav = () => {
             Order History
           </Link>
 
+
+        <Link
+  to="/my-custom-requests"
+  className="text-lime-50 font-semibold flex-1 text-center py-2 hover:bg-pink-900 rounded transition-all duration-300 mx-1"
+  style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+>
+  My Requests
+</Link>
           <Link
             to="/profile/settings"
             className="text-lime-50 font-semibold flex-1 text-center py-2 hover:bg-pink-900 rounded transition-all duration-300 mx-1"
