@@ -10,7 +10,7 @@ const Sidebar = ({ data }) => {
   const role = useSelector((state) => state.auth.role);
 
   return (
-    <div className='bg-[#ccb0a2ff] p-4 rounded flex flex-col items-center justify-between h-[100%]' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+    <div className='bg-[#661638] p-4 rounded flex flex-col items-center justify-between h-[100%]' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
       
       {/* Profile Info */}
       <div className='flex items-center flex-col justify-center'>

@@ -201,7 +201,7 @@ const uploadPhotos = async () => {
 
   return (
    <>
-   {Data &&  <div className="px-4 md:px-12 py-8 bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da] flex flex-col lg:flex-row gap-8">
+   {Data &&  <div className="px-4 md:px-12 py-8 bg-white  flex flex-col lg:flex-row gap-8">
       <div className="w-full lg:w-3/6">
        <div className=' flex flex-col lg:flex-row justify-around  px-12 py-14 rounded'> 
         {/* <img src={Data.url} alt={Data.type || "Art"} className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded" /> */}

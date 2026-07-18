@@ -1,21 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import { FaGripLines } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { FaShoppingCart } from "react-icons/fa";
+import axios from "axios";
 
 const Navbar = () => {
   const links = [
     { title: "Home", link: "/" },
     { title: "All Arts", link: "/all-arts" },
-    { title: "Cart", link: "/cart" },
+    // { title: "Cart", link: "/cart" },
     { title: "About us", link: "/about-us" },
       
     { title: "My Profile", link: "/profile" },
  
     { title: "Admin Profile", link: "/profile" },
   ];
-
+const [cartCount, setCartCount] = useState(0);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const role = useSelector((state) => state.auth.role);
 
@@ -36,7 +38,29 @@ const Navbar = () => {
   return true;
 });
 
+useEffect(() => {
+  const fetchCartCount = async () => {
+    try {
+      const headers = {
+        id: localStorage.getItem("id"),
+        authorization: `Bearer ${localStorage.getItem("token")}`,
+      };
 
+      const res = await axios.get(
+        "https://theaffinity-artstore.onrender.com/api/v1/cart/get-user-cart",
+        { headers }
+      );
+
+      setCartCount(res.data.data.length);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  if (isLoggedIn) {
+    fetchCartCount();
+  }
+}, [isLoggedIn]);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
@@ -86,9 +110,37 @@ const Navbar = () => {
         </button>
 
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img src="/mylogo.png" alt="logo" className="h-20 mb-2 relative top-1 object-contain rounded" />
+        {/* <Link to="/" className="flex items-center">
+          <img src="/mylogo.png" alt="logo" className="h-14 mb-2 relative top-1 object-contain rounded" />
         </Link>
+        
+        */}
+        <div className="flex items-center gap-6">
+ 
+{role === "user" && (
+  <Link
+    to="/cart"
+    className="relative text-2xl hover:text-[#DFB2A6]"
+  >
+    <FaShoppingCart />
+
+    {cartCount > 0 && (
+      <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-2 py-0.5">
+        {cartCount}
+      </span>
+    )}
+  </Link>
+)}
+  
+
+  <Link to="/">
+    <img
+      src="/mylogo.png"
+      alt="logo"
+      className="h-14 mb-2 relative top-1 object-contain rounded"
+    />
+  </Link>
+</div>
       </nav>
 
       {/* Mobile Nav */}
