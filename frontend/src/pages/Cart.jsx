@@ -58,12 +58,12 @@ const Cart = () => {
     }
   }
   return (
-    <div className='bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da]  px-12 py-8  min-h-screen' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+    <div className='bg-white  px-12 py-8  min-h-screen' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
     {!Cart && <div className='w-full h-screen flex items-center justify-center' style={{ fontFamily: "'Cinzel Decorative', cursive" }}><Loader /></div>}
     {Cart && Cart.length === 0 && (
       <div className='h-screen'>
         <div className='h-[100%] flex items-center justify-center flex-col'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-          <h1 className='text-3xl lg:text-4xl font-semibold text-[#661638]' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Empty Cart</h1>
+          <h1 className='text-xl lg:text-xl font-semibold text-[#661638]' style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Empty Cart</h1>
           {/* <img 
           src={emptyCartImage }
            alt="empty cart"

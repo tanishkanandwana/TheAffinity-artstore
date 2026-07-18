@@ -239,10 +239,10 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
       </div>
       <div className="p-6 w-full lg:w-3/6">
         <h2 className="text-[#4B001F] text-center shadow text-4xl font-bold"  style={{ fontFamily: "'Marcellus', serif" }}>{Data.type}</h2>
-        <p className="text-zinc-400 text-lg text-center mt-1"  style={{ fontFamily: "'Marcellus', serif" }}>{Data.form}</p>
-         <p className="text-[#473027ff] mt-10 text-xl font-seibold"  style={{ fontFamily: "'Marcellus', serif" }}>{Data.desc}</p>
+        <p className="text-[#6B193D] text-base text-center mt-1"  style={{ fontFamily: "'Marcellus', serif" }}>{Data.form}</p>
+         <p className="text-[#473027ff] mt-10 text-l font-seibold"  style={{ fontFamily: "'Marcellus', serif" }}>{Data.desc}</p>
             {/* <p className="text-lime-100 mt-1 text-lg">{Data.maker}</p> */}
-        <p className="mt-4 text-lime-700 text-2xl  font-semibold"  style={{ fontFamily: "'Marcellus', serif" }}>₹ {Data.price}</p>
+        <p className="mt-4 text-lime-700 text-xl  font-semibold"  style={{ fontFamily: "'Marcellus', serif" }}>₹ {Data.price}</p>
 
         <div className="mt-6 bg-white p-4 rounded-lg shadow">
   <h3
@@ -273,7 +273,7 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
 
 {/* RATING DISPLAY SECTION */}
 <div className="mt-8">
-  <h3 className="text-[#4B001F] text-2xl font-semibold mb-1"  style={{ fontFamily: "'Marcellus', serif" }}>Our Customer Reviews</h3>
+  <h3 className="text-[#4B001F] text-l font-semibold mb-1"  style={{ fontFamily: "'Marcellus', serif" }}>Our Customer Reviews</h3>
   
   {reviews.length === 0 && <p className="text-zinc-400 italic"  style={{ fontFamily: "'Marcellus', serif" }}>No reviews yet.</p>}
   
@@ -305,9 +305,9 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
       ))}
     </div>
     <textarea
-      className="w-full p-2 rounded bg-pink-100 text-black mb-2"
+      className="w-full p-2 rounded bg-zinc-100 text-black mb-2"
       rows="3"
-      placeholder="Your comment..."
+      placeholder="Leave a review..."
       value={comment}
       onChange={(e) => setComment(e.target.value)}
     ></textarea>

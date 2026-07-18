@@ -8,17 +8,20 @@ const categories = [
    { title: "Rakhi", img: "rakhi.jpg",  badge: "New" },
   //  { title: "Diwali", img: "diwali.jpg" },
       // { title: "Birthday", img: "bday.jpg" },
-    { title: "Crochet", img: "crochet.jpg" },
-
+       { title: "Customised-Gifts", img: "hampers.jpg", badge: "Popular"  },
+       { title: "Keychains", img: "Keychain.jpg" },
+    
+ { title: "Frames", img: "frames.jpg" },
       { title: "Resin", img: "resin.jpg" },
       //  { title: "phone-cases", img: "phonecase.jpg" },
-        { title: "Decor Essentials", img: "decor.jpg" },
+        { title: "Decor Essentials", img: "decor.jpg", badge: "Coming soon" },
     { title: "Bouquets", img: "bouquet.jpg" },
+    { title: "Crochet", img: "crochet.jpg" },
   { title: "Paintings", img: "polaroid.jpg" },
   { title: "Bookmarks", img: "bookmark.jpg" },
-  { title: "Customised-Gifts", img: "hampers.jpg" },
-  { title: "Keychains", img: "Keychain.jpg" },
-    { title: "Frames", img: "frames.jpg" },
+  
+  
+   
   { title: "Fabrics", img: "fabric.jpg" },
   
   

@@ -77,7 +77,7 @@ const ArtCard = ({data, favourite}) => {
           <p className="mt-1 text-sm text-pink-700 font-semibold">
             {data.form}
           </p>
-          <p className="text-sm text-lime-500 font-semibold">
+          <p className="text-sm text-lime-700 font-semibold">
             ₹ {data.price}
           </p>
         </div>
