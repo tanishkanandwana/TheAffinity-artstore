@@ -120,12 +120,12 @@ useEffect(() => {
 {role === "user" && (
   <Link
     to="/cart"
-    className="relative text-2xl hover:text-[#DFB2A6]"
+    className="relative text-xl hover:text-[#DFB2A6]"
   >
     <FaShoppingCart />
 
     {cartCount > 0 && (
-      <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-2 py-0.5">
+      <span className="absolute -top-2 -right-3 bg-black text-white text-xs rounded-full px-2 py-0.5">
         {cartCount}
       </span>
     )}

@@ -11,7 +11,7 @@ const Hero = () => {
   const slides = [
     {
       image: './Brand.png',
-      heading: 'The Affinity',
+      heading: 'TheAffinityArts',
       subheading: 'Art that celebrates, Gifts that connect',
     },
     // {
@@ -73,13 +73,13 @@ const Hero = () => {
       {/* Centered Text Content */}
     <div className="relative z-20 flex flex-col justify-center sm:justify-center items-center text-center min-h-[80vh] sm:min-h-[70vh] px-4 pt-8 sm:pt-0">
         <motion.h1
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-[7rem] text-white soft-glow"
+          className="text-xl sm:text-5xl md:text-7xl lg:text-[7rem] text-white soft-glow"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
           transition={{ duration: 1.2 }}
         >
-           THE AFFINITY
+           TheAffinityArts
         </motion.h1>
 
 

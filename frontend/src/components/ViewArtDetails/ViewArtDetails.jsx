@@ -216,7 +216,7 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
 
        {isLoggedIn === true && role === "user" &&  (<div className='flex flex-row lg:flex-col mt-4 items-center justify-between lg:justify-start mt-4 lg:mt-1 px-3'>
           <button className='bg-white rounded-full lg:rounded-full text-s p-3 -ml-3 lg:ml-1  lg:mr-1 text-[#e1786d] flex items-center justify-center' onClick={handleFav}><FaHeart /><span className='ms-0  block lg:hidden'></span></button>
-          <button className='text-[#d9a441]  bg-white rounded-full lg:rounded-full text-s p-3 mt-0 -mr-3 lg:ml-1 lg:mr-1 lg:mt-4 text-lime-600 flex items-center justify-center' onClick={handleCart}><MdShoppingCart /><span className='ms-0 block lg:hidden'></span></button>
+          <button className='text-[#d9a441]  bg-white rounded-full lg:rounded-full text-s p-3 mt-0 -mr-3 lg:ml-1 lg:mr-1 lg:mt-4 text-blue-500 flex items-center justify-center' onClick={handleCart}><MdShoppingCart /><span className='ms-0 block lg:hidden'></span></button>
           </div>)}
 
           {isLoggedIn === true && role === "admin" &&  (<div className='flex flex-row lg:flex-col mt-4 items-center justify-between lg:justify-start mt-4 lg:mt-1 px-3'>
