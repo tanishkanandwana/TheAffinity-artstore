@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="bg-[#FDF8F6] text-[#896c5dff] px-8 py-10">
+    <div className="bg-white text-[#8A365C] px-8 py-10">
       {/* Brand Title & Tagline */}
       <div className="mb-2">
         <h1
@@ -64,7 +64,7 @@ const Footer = () => {
   className="flex items-center gap-2 mt-10 hover:text-soft-glow transition duration-300"
   style={{ fontFamily: "'Cinzel Decorative', cursive" }}
 >
-  <FaEnvelope className="text-l text-[#895a4f]" />
+  <FaEnvelope className="text-s text-[#895a4f]" />
   affinityarts@gmail.com
 </a>
       <a

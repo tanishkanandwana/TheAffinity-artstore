@@ -54,15 +54,20 @@ const ArtCard = ({data, favourite}) => {
     scale: 1.05,
     transition: { duration: 0.3, ease: "easeInOut" }
   }}
-  className="rounded-lg shadow-md max-w-[220px] mx-auto"
+  className="max-w-[220px] mx-auto"
 >
-  <div
+  {/* <div
     className="bg-[#661638] rounded p-3 flex flex-col"
     style={{ fontFamily: "'Cinzel Decorative', cursive" }}
   >
     <Link to={`/view-art-details/${data._id}`}>
-      <div className="bg-[#f5e6da] rounded-xl shadow-md overflow-hidden">
+      <div className="bg-[#f5e6da] rounded-xl shadow-md overflow-hidden"> */}
         {/* Slightly bigger image */}
+        <Link to={`/view-art-details/${data._id}`}>
+  <div
+    className="bg-[#f5e6da] rounded-xl shadow-lg overflow-hidden border border-[#e8ddd4]"
+    style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+  >
         <div className="w-full h-52">
           <img
             src={fixedImageUrl}
@@ -92,7 +97,7 @@ const ArtCard = ({data, favourite}) => {
         Remove
       </button>
     )}
-  </div>
+  
 </motion.div>
 
 

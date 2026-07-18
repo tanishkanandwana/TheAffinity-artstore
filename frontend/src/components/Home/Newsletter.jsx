@@ -36,7 +36,7 @@ const Newsletter = () => {
       <div className="absolute top-0 left-0 w-full h-full bg-[#f7ebe7]/40 z-10 backdrop-blur-sm" />
 
       {/* Content */}
-      <div className="relative z-20 py-10 px-4 text-center text-[#6e433d] max-w-xl mx-auto">
+      <div className="relative z-20 py-10 px-4 text-center text-[#661638] max-w-xl mx-auto">
         <h2 className="text-3xl font-semibold mb-2">Stay Connected</h2>
         <p className="mb-6">
           Subscribe to get updates on new collections, offers, and art stories.
@@ -56,7 +56,7 @@ const Newsletter = () => {
           />
           <button
             type="submit"
-            className="bg-[#a67364] hover:bg-[#6e433d] transition-colors text-white px-6 py-2 rounded-full"
+            className="bg-[#661638] hover:bg-[#752048] transition-colors text-white px-6 py-2 rounded-full"
           >
             Subscribe
           </button>

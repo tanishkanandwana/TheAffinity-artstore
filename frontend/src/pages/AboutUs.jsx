@@ -23,7 +23,7 @@ const AboutUs = () => {
         style={{ fontFamily: "'Marcellus', serif" }}
       >
         <h1 className="text-4xl text-[#F5E6DA] text-center font-bold mb-6"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>THE AFFINITY</h1>
-        <p className="text-lg text-[#DCC9B8] text-center leading-relaxed max-w-xl"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+        <p className="text-base text-[#DCC9B8] text-center leading-relaxed max-w-xl"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
           -Because Gifting is more than a Tradition - It's how we Celebrate, Connect, and Remember.
           <br />
           From Affinity to THE AFFINITY, We offer 'Handmade pieces' -<br />
