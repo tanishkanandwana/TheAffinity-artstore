@@ -89,7 +89,7 @@ const CustomRequestForm = () => {
           className="text-3xl md:text-5xl text-center text-[#6e433d] mb-4"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
-          Customize Yours ✨
+          Customize Your Gift
         </h1>
 
         <p className="text-center text-gray-600 mb-8">
@@ -109,7 +109,7 @@ const CustomRequestForm = () => {
               name="artworkType"
               value={formData.artworkType}
               onChange={handleChange}
-              placeholder="Example: Resin Art, Crochet Bouquet..."
+              placeholder="Example: Resin Art, Crochet, Birthday Hamper..."
               className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#a67364]"
             />
           </div>
@@ -153,7 +153,7 @@ const CustomRequestForm = () => {
               name="contact"
               value={formData.contact}
               onChange={handleChange}
-              placeholder="Phone number / Instagram ID"
+              placeholder="enter your whatsapp/Correct Instagram ID"
               className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#a67364]"
             />
           </div>
@@ -173,7 +173,7 @@ const CustomRequestForm = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#895a4f] hover:bg-[#6e433d] text-white py-3 rounded-xl transition-all duration-300"
+            className="w-full bg-[#661638] hover:bg-[#6e433d] text-white py-3 rounded-xl transition-all duration-300"
           >
             {loading ? "Sending..." : "Send Request"}
           </button>

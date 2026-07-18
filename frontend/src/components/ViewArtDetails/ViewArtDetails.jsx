@@ -313,7 +313,7 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
     ></textarea>
     <button
       onClick={handleReviewSubmit}
-      className="bg-[#facbc6] text-[#4B001F] border border-white hover:bg-[#f0d6c9ff] px-4 py-2 rounded font-semibold"
+      className="bg-[#661638] hover:bg-[#752048] text-white border border-white hover:bg-[#f0d6c9ff] px-4 py-2 rounded font-semibold"
     >
       Submit Review
     </button>
