@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const AdminCustomRequests = () => {
   const [requests, setRequests] = useState([]);
@@ -36,9 +37,12 @@ const AdminCustomRequests = () => {
         { headers }
       );
 
+      toast.success("Request updated successfully ✨");
+
       fetchRequests();
     } catch (err) {
       console.log(err);
+      toast.error("Failed to update request");
     }
   };
 
@@ -81,8 +85,17 @@ const RequestCard = ({ request, updateRequest }) => {
       <p>
         <strong>Contact:</strong> {request.contact}
       </p>
+      <p>
+  <strong>Preferred Date:</strong>{" "}
+  {new Date(request.preferredDate).toLocaleDateString()}
+</p>
 
-      {request.file && (
+<p>
+  <strong>Submitted:</strong>{" "}
+  {new Date(request.createdAt).toLocaleString()}
+</p>
+
+      {/* {request.file && (
         <a
           href={request.file}
           target="_blank"
@@ -93,10 +106,38 @@ const RequestCard = ({ request, updateRequest }) => {
         </a>
       )}
 
+       */}
+{request.file && (
+  <div className="mt-3">
+    <p className="font-semibold mb-2">
+      Reference Image:
+    </p>
+
+    <a
+      href={request.file}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <img
+        src={request.file}
+        alt="Custom Request"
+        className="w-48 h-48 object-cover rounded border hover:scale-105 transition"
+      />
+    </a>
+  </div>
+)}
+
       <div className="mt-3">
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
+          className={
+    status === "completed"
+      ? "text-green-600 font-semibold"
+      : status === "in-progress"
+      ? "text-blue-600 font-semibold"
+      : "text-yellow-600 font-semibold"
+  }
         >
           <option value="pending">
             Pending
