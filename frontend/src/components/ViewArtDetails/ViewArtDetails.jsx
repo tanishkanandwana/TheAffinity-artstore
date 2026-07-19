@@ -184,6 +184,35 @@ const uploadPhotos = async () => {
     
   };
 
+
+  const handleBuyNow = async () => {
+  try {
+    await axios.post(
+      `https://theaffinity-artstore.onrender.com/api/v1/orders/buy-now/${id}`,
+      {},
+      {
+        headers: {
+          id: localStorage.getItem("id"),
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
+
+    Swal.fire({
+      icon: "success",
+      title: "Order placed successfully!",
+      toast: true,
+      position: "top-end",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+
+    navigate("/profile/orderHistory");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
   const deleteArt = async () => {
    const response = await axios.delete("https://theaffinity-artstore.onrender.com/api/v1/arts/delete-art", {headers});
   //  alert(response.data.message);
@@ -244,6 +273,24 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
             {/* <p className="text-lime-100 mt-1 text-lg">{Data.maker}</p> */}
         <p className="mt-4 text-lime-700 text-xl  font-semibold"  style={{ fontFamily: "'Marcellus', serif" }}>₹ {Data.price}</p>
 
+
+{isLoggedIn && role === "user" && (
+  <div className="mt-6 flex gap-3">
+    <button
+      onClick={handleCart}
+      className="bg-[#661638] text-white px-5 py-3 rounded-md hover:bg-[#752048]"
+    >
+      Add to Cart
+    </button>
+
+    <button
+      onClick={handleBuyNow}
+      className="bg-[#d9a441] text-white px-5 py-3 rounded-md hover:bg-[#c3922c] font-semibold"
+    >
+      Buy Now
+    </button>
+  </div>
+)}
         <div className="mt-6 bg-white p-4 rounded-lg shadow">
   <h3
     className="text-[#4B001F] font-semibold mb-2"

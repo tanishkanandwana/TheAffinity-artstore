@@ -53,6 +53,35 @@ router.post("/place-order", authenticateToken, async (req, res) => {
   }
 });
 
+router.post("/buy-now/:artId", authenticateToken, async (req, res) => {
+  try {
+    const { id } = req.headers;
+    const { artId } = req.params;
+
+    const newOrder = new Order({
+      user: id,
+      art: artId,
+      status: "Order placed",
+    });
+
+    const savedOrder = await newOrder.save();
+
+    await User.findByIdAndUpdate(id, {
+      $push: { orders: savedOrder._id },
+    });
+
+    return res.status(200).json({
+      status: "Success",
+      message: "Order placed successfully",
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+});
+
 
 //get order history of particular user
 router.get("/get-order-history", authenticateToken, async (req, res) => {
