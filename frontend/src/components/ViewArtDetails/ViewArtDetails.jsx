@@ -187,31 +187,37 @@ const uploadPhotos = async () => {
 
   const handleBuyNow = async () => {
   try {
-    await axios.post(
-      `https://theaffinity-artstore.onrender.com/api/v1/orders/buy-now/${id}`,
+    await axios.put(
+      "https://theaffinity-artstore.onrender.com/api/v1/cart/add-to-cart",
       {},
-      {
-        headers: {
-          id: localStorage.getItem("id"),
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
+      { headers }
     );
 
     Swal.fire({
       icon: "success",
-      title: "Order placed successfully!",
+      title: "Redirecting to cart...",
+      toast: true,
+      position: "top-end",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+
+    navigate("/cart");
+  } catch (error) {
+    console.log(error);
+
+    Swal.fire({
+      icon: "error",
+      title: "Failed to add item to cart",
       toast: true,
       position: "top-end",
       timer: 2000,
       showConfirmButton: false,
     });
-
-    navigate("/profile/orderHistory");
-  } catch (error) {
-    console.log(error);
   }
 };
+
+
 
   const deleteArt = async () => {
    const response = await axios.delete("https://theaffinity-artstore.onrender.com/api/v1/arts/delete-art", {headers});
@@ -245,7 +251,7 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
 
        {isLoggedIn === true && role === "user" &&  (<div className='flex flex-row lg:flex-col mt-4 items-center justify-between lg:justify-start mt-4 lg:mt-1 px-3'>
           <button className='bg-white rounded-full lg:rounded-full text-s p-3 -ml-3 lg:ml-1  lg:mr-1 text-[#e1786d] flex items-center justify-center' onClick={handleFav}><FaHeart /><span className='ms-0  block lg:hidden'></span></button>
-          <button className='text-[#d9a441]  bg-white rounded-full lg:rounded-full text-s p-3 mt-0 -mr-3 lg:ml-1 lg:mr-1 lg:mt-4 text-blue-500 flex items-center justify-center' onClick={handleCart}><MdShoppingCart /><span className='ms-0 block lg:hidden'></span></button>
+          {/* <button className='text-[#d9a441]  bg-white rounded-full lg:rounded-full text-s p-3 mt-0 -mr-3 lg:ml-1 lg:mr-1 lg:mt-4 text-blue-500 flex items-center justify-center' onClick={handleCart}><MdShoppingCart /><span className='ms-0 block lg:hidden'></span></button> */}
           </div>)}
 
           {isLoggedIn === true && role === "admin" &&  (<div className='flex flex-row lg:flex-col mt-4 items-center justify-between lg:justify-start mt-4 lg:mt-1 px-3'>
@@ -273,24 +279,24 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
             {/* <p className="text-lime-100 mt-1 text-lg">{Data.maker}</p> */}
         <p className="mt-4 text-lime-700 text-xl  font-semibold"  style={{ fontFamily: "'Marcellus', serif" }}>₹ {Data.price}</p>
 
-
 {isLoggedIn && role === "user" && (
-  <div className="mt-6 flex gap-3">
+  <div className="flex gap-3 mt-5">
     <button
       onClick={handleCart}
-      className="bg-[#661638] text-white px-5 py-3 rounded-md hover:bg-[#752048]"
+      className="bg-[#661638] text-white px-5 py-2 rounded hover:bg-[#4B001F]"
     >
       Add to Cart
     </button>
 
     <button
       onClick={handleBuyNow}
-      className="bg-[#d9a441] text-white px-5 py-3 rounded-md hover:bg-[#c3922c] font-semibold"
+      className="bg-[#d9a441] text-white px-5 py-2 rounded hover:bg-[#c08d21]"
     >
       Buy Now
     </button>
   </div>
 )}
+
         <div className="mt-6 bg-white p-4 rounded-lg shadow">
   <h3
     className="text-[#4B001F] font-semibold mb-2"
@@ -404,27 +410,3 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
 
 export default ViewArtDetails; 
 
-// const ViewArtDetails = () => {
-//         const { id } = useParams();
-      
-//          const [Data, setData] = useState();
-//     useEffect(() => {
-//         const fetch = async()=>{
-//           const response = await axios.get(`http://localhost:1000/api/v1/get-art-by-id/${id}`
-
-//           );
-//         //   console.log(response);
-//           setData(response.data.data);
-//         };
-//         fetch();
-//     }, []);
-//   return (
-//     <div className="px-12 py-8 bg-pink-900 flex gap-8">
-//         <div className="bg-pink-700 rounded p-4 h-screen w-3/6 flex items-center justify-center"><img src= {Data.url} alt="/" className="h-[70vh]"/></div>
-//         <div className="p-4 w-3/6"></div>
-      
-//     </div>
-//   )
-// }
-
-// export default ViewArtDetails

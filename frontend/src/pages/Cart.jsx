@@ -125,7 +125,7 @@ const Cart = () => {
     {Cart && Cart.length > 0 && (
       <div className='mt-4 w-full flex ites-center justify-end'>
         <div className='p-4  rounded'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-          <h1 className='text-3xl text-[#473027ff] font-semibold'>Total amount</h1>
+          <h1 className='text-xl text-[#473027ff] font-semibold'>Total amount</h1>
           <div className='mt-3 flex items-center justify-between text-xl text-white'>
             <h2>Quantity: {Cart.length} </h2> <h2 className='text-lime-600 text-xl font-semibold'> ₹{Total}</h2>
           </div>
