@@ -71,9 +71,25 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/40 z-10  sm:min-h-[80vh]"></div>
 
       {/* Centered Text Content */}
-    <div className="relative z-20 flex flex-col justify-center sm:justify-center items-center text-center min-h-[80vh] sm:min-h-[70vh] px-4 pt-8 sm:pt-0">
+   <div className="relative z-20 flex flex-col items-center text-center px-4">
+  <div className="
+    bg-black/20
+    backdrop-blur-sm
+    rounded-3xl
+    px-6
+    py-6
+    border
+    border-white/20
+  ">
         <motion.h1
-          className="text-xl sm:text-5xl md:text-7xl lg:text-[7rem] text-white soft-glow"
+          className="text-4xl
+sm:text-5xl
+md:text-7xl
+lg:text-[7rem]
+text-white
+font-semibold
+tracking-wide
+drop-shadow-2xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
@@ -94,7 +110,15 @@ const Hero = () => {
         </motion.p> */}
 
         <motion.p
-          className="mt-4 text-lg sm:text-l md:text-xl text-white font-medium soft-glow"
+          className="mt-2
+text-sm
+sm:text-base
+md:text-xl
+text-white/90
+max-w-xs
+sm:max-w-none
+leading-relaxed
+drop-shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -154,6 +178,7 @@ const Hero = () => {
             Customize Yours
           </Link>
         </motion.div>
+        </div>
       </div>
     </div>
   );
