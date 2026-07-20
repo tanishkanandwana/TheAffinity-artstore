@@ -43,7 +43,7 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/custom-request-form" className="hover:text-soft-glow transition">
+              <Link to="/custom-request" className="hover:text-soft-glow transition">
                 Customize Your Gift
               </Link>
             </li>

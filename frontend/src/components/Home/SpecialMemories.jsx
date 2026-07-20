@@ -3,30 +3,41 @@ import { motion } from "framer-motion";
 
 const memories = [
   {
-    image: "/mahima.jpg",
-    title: "Mahima Makwana",
-    desc: "A special handcrafted memory."
+    image: "memories1.jpg",
+    title: "",
+    desc: ""
   },
   {
-    image: "/memory1.jpg",
-    title: "Birthday Surprise",
-    desc: "Created with love."
+    image: "memories2.jpeg",
+    title: "",
+    desc: ""
   },
   {
-    image: "/memory2.jpg",
-    title: "Custom Gift Box",
-    desc: "Personalized for a beautiful story."
+    image: "memories5.jpeg",
+    title: "",
+    desc: ""
   },
   {
-    image: "/memory3.jpg",
-    title: "Preserved Memories",
-    desc: "Moments that last forever."
+    image: "memories4.jpg",
+    title: "",
+    desc: ""
   },
   {
-    image: "/memory4.jpg",
-    title: "Celebrity Orders",
-    desc: "Crafted specially for our clients."
+    image: "memories6.jpg",
+    title: "",
+    desc: ""
+  },
+   {
+    image: "memories7.jpg",
+    title: "",
+    desc: ""
+  },
+    {
+    image: "memories8.jpg",
+    title: "",
+    desc: ""
   }
+
 ];
 
 const SpecialMemories = () => {

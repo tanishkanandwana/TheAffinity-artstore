@@ -55,7 +55,7 @@ const MobileNav = () => {
         <div className="w-full flex lg:hidden items-center justify-between mt-4 px-2">
           <Link
             to="/profile"
-            className="text-lime-50 font-semibold flex-1 text-center py-2 hover:bg-pink-900 rounded transition-all duration-300 mx-1"
+            className="text-zinc-500 font-semibold flex-1 text-center py-2 hover:text-zinc-800 rounded transition-all duration-300 mx-1"
             style={{ fontFamily: "'Cinzel Decorative', cursive" }}
           >
             Favorites
@@ -63,7 +63,7 @@ const MobileNav = () => {
 
           <Link
             to="/profile/orderHistory"
-            className="text-lime-50 font-semibold flex-1 text-center py-2 hover:bg-pink-900 rounded transition-all duration-300 mx-1"
+            className="text-zinc-500 font-semibold flex-1 text-center py-2 hover:text-zinc-800 rounded transition-all duration-300 mx-1"
             style={{ fontFamily: "'Cinzel Decorative', cursive" }}
           >
             Order History
@@ -72,14 +72,14 @@ const MobileNav = () => {
 
         <Link
   to="/my-custom-requests"
-  className="text-lime-50 font-semibold flex-1 text-center py-2 hover:bg-pink-900 rounded transition-all duration-300 mx-1"
+  className="text-zinc-500 font-semibold flex-1 text-center py-2 hover:text-zinc-800 rounded transition-all duration-300 mx-1"
   style={{ fontFamily: "'Cinzel Decorative', cursive" }}
 >
   My Requests
 </Link>
           <Link
             to="/profile/settings"
-            className="text-lime-50 font-semibold flex-1 text-center py-2 hover:bg-pink-900 rounded transition-all duration-300 mx-1"
+            className="text-zinc-500 font-semibold flex-1 text-center py-2 hover:text-zinc-800 rounded transition-all duration-300 mx-1"
             style={{ fontFamily: "'Cinzel Decorative', cursive" }}
           >
             Settings
