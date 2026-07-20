@@ -12,12 +12,12 @@ const AllArts = () => {
         fetch();
     }, []);
   return (
-    <div className="bg-white  px-12 py-8">
+    <div className="bg-white px-3 md:px-12 py-8">
       
       <h4 className="text-xl sm:text-5xl text-[#661638] font-semibold whitespace-nowrap text-center mt-3 mb-5" style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Explore Collections</h4> 
        {/* <h4 className="text-xs sm:text-xl text-[#4B001F] whitespace-nowrap text-center mt-1 mb-5" style={{ fontFamily: "'Cinzel Decorative', cursive" }}>have your coffee☕, & start shopping... </h4>  */}
     {!Data && <div className='w-full h-screen flex items-center justify-center'><Loader /></div>}
-    <div className="my-8 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4">
+    <div className="my-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
       {Data && Data.map((items,i)=> <div key={i}>
         <ArtCard data={items}/>{" "}
       </div>)}
