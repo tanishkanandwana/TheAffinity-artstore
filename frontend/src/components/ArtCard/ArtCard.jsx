@@ -54,7 +54,7 @@ const ArtCard = ({data, favourite}) => {
     scale: 1.05,
     transition: { duration: 0.3, ease: "easeInOut" }
   }}
-  className="max-w-[220px] mx-auto"
+  className="max-w-[160px] md:max-w-[220px] mx-auto"
 >
   {/* <div
     className="bg-[#661638] rounded p-3 flex flex-col"
@@ -68,21 +68,21 @@ const ArtCard = ({data, favourite}) => {
     className="bg-[#f5e6da] rounded-xl shadow-lg overflow-hidden border border-[#e8ddd4]"
     style={{ fontFamily: "'Cinzel Decorative', cursive" }}
   >
-        <div className="w-full h-52">
+        <div className="w-full h-40 md:h-52">
           <img
             src={fixedImageUrl}
             alt={data.type || "art image"}
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="p-3">
-          <h2 className="mt-2 text-base font-semibold text-center text-[#382b24ff] truncate">
+        <div className="p-2 md:p-3">
+          <h2 className="mt-2 text-sm md:text-base font-semibold text-center text-[#382b24ff] truncate">
             {data.type}
           </h2>
-          <p className="mt-1 text-sm text-pink-700 font-semibold">
+          <p className="mt-1 text-xs md:text-sm text-pink-700 font-semibold">
             {data.form}
           </p>
-          <p className="text-sm text-lime-700 font-semibold">
+          <p className="text-xs md:text-sm text-lime-700 font-semibold">
             ₹ {data.price}
           </p>
         </div>
