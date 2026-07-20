@@ -46,7 +46,47 @@ const UserOrderHistory = () => {
 
    {OrderHistory && OrderHistory.length >0 && (
     <div className='h-[100%] p-0 md:p-4 text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-      <h1 className='text-3xl md:text-5xl mb-8 font-semibold text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Your Order History</h1>
+      <h1 className='text-xl md:text-3xl mb-6 font-semibold text-[#4B001F]'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>Your Order History</h1>
+
+      <div className="md:hidden space-y-3">
+  {OrderHistory.filter(item => item.art).map((item, i) => (
+    <div
+      key={item._id}
+      className="bg-[#FDF8F6] rounded-lg p-4 shadow-sm border"
+    >
+      <p className="text-xs text-gray-500">
+        Order #{i + 1}
+      </p>
+
+      <Link
+        to={`view-art-details/${item.art._id}`}
+        className="block font-semibold mt-2"
+      >
+        {item.art.type}
+      </Link>
+
+      <p className="text-sm mt-2">
+        {item.art.desc?.slice(0, 60)}...
+      </p>
+
+      <div className="flex justify-between mt-3">
+        <span>₹{item.art.price}</span>
+
+        <span
+          className={
+            item.status === "Canceled"
+              ? "text-red-500"
+              : "text-yellow-500"
+          }
+        >
+          {item.status}
+        </span>
+      </div>
+    </div>
+  ))}
+</div>
+      
+      <div className="hidden md:block">
       <div className='mt-4 bg-gradient-to-b from-[#FFF5F9] via-[#e7c3b1] to-[#f5e6da] w-full rounded py-2 px-4 flex gap-2'>
         <div className='w-[3%]'>
           <h1 className='text-center'>Sr.</h1>
@@ -69,7 +109,7 @@ const UserOrderHistory = () => {
       </div>
 
     {OrderHistory.filter(item => item.art).map((items,i) => (        
-      <div className='bg-[#FDF8F6] w-full rounded py-2 px-4 flex gap-4 hover:bg-[#F5E6DA] cursor-pointer transition-all duration-400'>
+      <div    key={items._id} className='bg-[#FDF8F6] w-full rounded py-2 px-4 flex gap-4 hover:bg-[#F5E6DA] cursor-pointer transition-all duration-400'>
         <div className='w-[3%]'>
           <h1 className='text-center'>{i+1}</h1>
 
@@ -105,6 +145,7 @@ const UserOrderHistory = () => {
         </div>
       </div>
     ))}
+    </div>
 
 
     
