@@ -82,25 +82,44 @@ const CustomRequestForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8f3ef] flex items-center justify-center px-4 py-10">
-      <div className="w-full max-w-2xl bg-white shadow-xl rounded-3xl p-8">
+    <div className="relative min-h-screen flex items-center justify-center px-4 py-10 overflow-hidden">
+      <video
+  className="absolute top-0 left-0 w-full h-full object-cover"
+  src="/gift-wrapping-woman-tie-a-white-ribbon-bow.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+/>
+<div className="absolute inset-0 bg-[#2b0e18]/30" />
+      {/* <div className="relative z-10 w-full max-w-2xl bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-8 border border-white/30"> */}
 
+<div className="relative z-10 w-full max-w-2xl
+bg-white/20
+backdrop-blur-xl
+shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+rounded-3xl
+p-8
+border border-white/20">
         <h1
-          className="text-3xl md:text-5xl text-center text-[#6e433d] mb-4"
+          className="text-3xl md:text-5xl text-center text-white/90 mb-4 tracking-wide"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
           Customize Your Gift
         </h1>
 
-        <p className="text-center text-gray-600 mb-8">
-          Share your idea, inspiration, or reference images —
-          we’ll create something meaningful for you.
-        </p>
+      <p
+  className="text-center text-white/90 mb-8 leading-relaxed"
+  style={{ fontFamily: "'Marcellus', serif" }}
+>
+  Every handmade piece begins with a story.
+  Share yours and we'll craft something uniquely yours.
+</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
 
           <div>
-            <label className="block mb-2 text-[#6e433d] font-semibold">
+            <label className="block mb-2 text-white/90 font-semibold">
               Artwork Type
             </label>
 
@@ -110,12 +129,12 @@ const CustomRequestForm = () => {
               value={formData.artworkType}
               onChange={handleChange}
               placeholder="Example: Resin Art, Crochet, Birthday Hamper..."
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 outline-none focus:border-[#a67364]"
+              className="w-full bg-white/80 border border-[#d8c4b5] rounded-xl px-4 py-3 outline-none focus:border-[#661638] focus:ring-2 focus:ring-[#e7c3b1] transition-all"
             />
           </div>
 
           <div>
-            <label className="block mb-2 text-[#6e433d] font-semibold">
+            <label className="block mb-2 text-white/90 font-semibold">
               Describe Your Idea
             </label>
 
@@ -130,7 +149,7 @@ const CustomRequestForm = () => {
           </div>
 
           <div>
-            <label className="block mb-2 text-[#6e433d] font-semibold">
+            <label className="block mb-2  text-white/90 font-semibold">
               Preferred Delivery Date
             </label>
 
@@ -144,7 +163,7 @@ const CustomRequestForm = () => {
           </div>
 
           <div>
-            <label className="block mb-2 text-[#6e433d] font-semibold">
+            <label className="block mb-2  text-white/90 font-semibold">
               Contact Information
             </label>
 
@@ -159,7 +178,7 @@ const CustomRequestForm = () => {
           </div>
 
           <div>
-            <label className="block mb-2 text-[#6e433d] font-semibold">
+            <label className="block mb-2  text-white/90 font-semibold">
               Upload Reference Image
             </label>
 
@@ -173,7 +192,7 @@ const CustomRequestForm = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#661638] hover:bg-[#6e433d] text-white py-3 rounded-xl transition-all duration-300"
+            className="w-full bg-gradient-to-r from-[#661638] to-[#8c3153] hover:scale-[1.02] text-white py-3 rounded-xl transition-all duration-300 shadow-lg"
           >
             {loading ? "Sending..." : "Send Request"}
           </button>

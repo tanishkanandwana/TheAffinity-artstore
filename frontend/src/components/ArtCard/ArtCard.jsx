@@ -54,7 +54,7 @@ const ArtCard = ({data, favourite}) => {
     scale: 1.05,
     transition: { duration: 0.3, ease: "easeInOut" }
   }}
-  className="w-full max-w-[145px] md:max-w-[220px] mx-auto"
+  className="w-full max-w-[160px] md:max-w-[220px] mx-auto"
 >
   {/* <div
     className="bg-[#661638] rounded p-3 flex flex-col"
