@@ -3,6 +3,7 @@ import Hero from "../components/Home/Hero";
 import RecentlyAdded from '../components/Home/RecentlyAdded';
 import Newsletter from '../components/Home/Newsletter';
 import CarouselCategories from '../components/CarouselCategories';
+import SpecialMemories from '../components/Home/SpecialMemories';
 
 const Home = () => {
   return (
@@ -13,6 +14,8 @@ const Home = () => {
 <CarouselCategories />
 
       <RecentlyAdded />
+    
+    <SpecialMemories />
     <Newsletter />
     </div>
   )
