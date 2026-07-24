@@ -10,9 +10,10 @@ await mongoose.connect(process.env.URI, {
   useUnifiedTopology: true
 });
 
-  const username = "adminUser";
-  const email = "admin@example.com";
-  const plainPassword = "admin123"; // replace
+  const username = "tanishkanandwana";
+
+  const email = "theaffinityarts@gmail.com";
+  const plainPassword = "tani@#inity*25"; // replace
   const existing = await User.findOne({ username });
   if (existing) {
     console.log("User already exists:", existing._id.toString());
