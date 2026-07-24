@@ -124,7 +124,7 @@ drop-shadow-lg"
           transition={{ delay: 0.3, duration: 0.8 }}
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
-          Art that celebrates, Gifts that connect | since 2024
+          Art that celebrates, Gifts that connect 
         </motion.p>
 
         <motion.div

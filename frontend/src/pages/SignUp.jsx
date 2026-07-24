@@ -6,6 +6,7 @@ const SignUp = () => {
   const [Values, setValues] = useState({ 
     username: "",
      email:"",
+       contact:"",
      password:"",
     address:"",
   });
@@ -18,7 +19,7 @@ const SignUp = () => {
 
   const submit = async()=>{
     try {
-      if(Values.username === "" || Values.email === "" || Values.password === "" || Values.address === ""){
+      if(Values.username === "" || Values.email === "" || Values.contact === "" || Values.password === "" || Values.address === ""){
         alert("All fields are required");
       }
       else{
@@ -72,6 +73,25 @@ const SignUp = () => {
           onChange={change}
           />
         </div>
+
+        <div className='mt-4'>
+  <label
+    className='text-gray-700'
+    style={{ fontFamily: "'Cinzel Decorative', cursive" }}
+  >
+    WhatsApp / Instagram
+  </label>
+
+  <input
+    type="text"
+    className="w-full mt-2 border text-gray-700 p-2 outline-none"
+    placeholder="WhatsApp Number or Instagram ID"
+    name="contact"
+    required
+    value={Values.contact}
+    onChange={change}
+  />
+</div>
 
           <div className='mt-4'>
           <label htmlFor='' className='text-gray-700'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>

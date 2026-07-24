@@ -8,7 +8,7 @@ const { authenticateToken } = require("./userAuth");
 // Creating SIGN UP api {post}
 router.post("/sign-up", async (req, res) => {
     try {
-       const {username,email,password,address} = req.body;
+       const {username,email,contact,password,address} = req.body;
       
        //check username length is more than 4 
        if(username.length < 4){
@@ -44,6 +44,7 @@ router.post("/sign-up", async (req, res) => {
 
        const newUser = new User ({username:username,
         email:email,
+        contact,
         password:hashPass,
         address:address});
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { RxCross1 } from "react-icons/rx";
 const SeeUserData = ({ userDivData, userDiv, setuserDiv}) =>{
+    console.log(userDivData);
  return (
     <>
     <div className={`${userDiv} top-5  h-screen w-full bg-[#F5E6DA] opacity-80`}></div>  
@@ -25,6 +26,15 @@ const SeeUserData = ({ userDivData, userDiv, setuserDiv}) =>{
                     Email: <span className='font-semibold'>{userDivData.email}</span>
                 </label>
             </div>
+
+            <div className='mt-4'>
+  <label>
+    Contact:{" "}
+    <span className='font-semibold'>
+      {userDivData.contact}
+    </span>
+  </label>
+</div>
             <div className='mt-4'>
                 <label htmlFor=''>
                     Address: {" "}

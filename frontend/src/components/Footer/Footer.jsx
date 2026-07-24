@@ -12,7 +12,7 @@ const Footer = () => {
           className="text-2xl font-semibold flex justify-end"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
-          THE AFFINITY
+          THEAFFINITYARTS
         </h1>
         <p
           className="text-xs italic mt-1 flex justify-end"
@@ -118,7 +118,7 @@ const Footer = () => {
         className="text-[10px] font-semibold text-center"
         style={{ fontFamily: "'Cinzel Decorative', cursive" }}
       >
-        &copy; 2025 THE AFFINITY. All rights reserved.
+        &copy; 2025 THEAFFINITYARTS | 2024
       </h1>
     </div>
   );

@@ -32,7 +32,7 @@ const Sidebar = ({ data }) => {
           </Link>
 
           <Link to="/my-custom-requests" className="text-lime-50 font-semibold w-full py-2 mt-4 text-center hover:text-xl rounded transition-all duration-600">
-            My Custom Requets
+            My Custom Requests
           </Link>
           
 
