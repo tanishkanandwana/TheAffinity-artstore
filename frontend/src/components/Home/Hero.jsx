@@ -3,11 +3,14 @@
 import React from 'react'; 
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
 import { motion } from 'framer-motion';
 
 
 const Hero = () => {
-  
+  const isLoggedIn = useSelector(
+  (state) => state.auth.isLoggedIn
+);
   const slides = [
     {
       image: './Brand.png',
@@ -180,6 +183,27 @@ drop-shadow-lg"
         </motion.div>
         </div>
       </div>
+      {!isLoggedIn && (
+  <div className="md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-30">
+    <Link
+      to="/Login"
+      className="
+        bg-[#661638]
+        text-white
+        px-5
+        py-3
+        rounded-full
+        shadow-xl
+        text-sm
+        font-semibold
+        whitespace-nowrap
+        animate-pulse
+      "
+    >
+      🛒 Sign Up / Login to Order
+    </Link>
+  </div>
+)}
     </div>
   );
 };
