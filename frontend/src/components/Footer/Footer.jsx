@@ -9,13 +9,13 @@ const Footer = () => {
       {/* Brand Title & Tagline */}
       <div className="mb-2">
         <h1
-          className="text-2xl font-semibold flex justify-end"
+          className="text-xl font-semibold flex justify-end"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
           THEAFFINITYARTS
         </h1>
         <p
-          className="text-xs italic mt-1 flex justify-end"
+          className="text-[10px] italic mt-1 flex justify-end"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
           “Art that Celebrates, Gifts that Connect”
@@ -65,7 +65,7 @@ const Footer = () => {
   style={{ fontFamily: "'Cinzel Decorative', cursive" }}
 >
   <FaEnvelope className="text-s text-[#895a4f]" />
-  affinityarts@gmail.com
+  theaffinityarts@gmail.com
 </a>
       <a
             href="https://www.instagram.com/theaffinityarts"

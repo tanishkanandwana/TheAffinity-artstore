@@ -60,7 +60,7 @@ const SpecialMemories = () => {
       <div className="relative z-10">
 
         <h2
-          className="text-center text-3xl md:text-5xl text-white mb-4"
+          className="text-center text-xl md:text-3xl text-white mb-4"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
           Special Memories We've Created

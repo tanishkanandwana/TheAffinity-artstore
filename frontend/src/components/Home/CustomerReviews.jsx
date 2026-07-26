@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 
 const memories = [
   {
-    image: "review1.jpg",
+    image: "review6.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Swasti"
+    desc: "Miss. Aayushi"
+  },
+  {
+    image: "review10.jpg",
+     clientName: "",
+    title: "",
+    desc: "Mr.Utkarsh"
   },
   {
     image: "review2.jpg",
@@ -21,6 +27,12 @@ const memories = [
     desc: "Miss. Urvashi"
   },
   {
+    image: "review8.jpg",
+     clientName: "",
+    title: "",
+    desc: "Mr. Tirth"
+  },
+  {
     image: "review4.jpg",
      clientName: "",
     title: "",
@@ -31,6 +43,24 @@ const memories = [
      clientName: "",
     title: "",
     desc: "Miss. Srishti"
+  },
+  {
+    image: "review1.jpg",
+     clientName: "",
+    title: "",
+    desc: "Miss. Swasti"
+  },
+  {
+    image: "review7.jpg",
+     clientName: "",
+    title: "",
+    desc: "Miss. Riya"
+  },
+  {
+    image: "review8.jpg",
+     clientName: "",
+    title: "",
+    desc: "Miss. Nisha"
   }
 
 ];
@@ -55,10 +85,10 @@ const CustomerReviews = () => {
       <div className="relative z-10">
 
         <h2
-          className="text-center text-3xl md:text-5xl text-white mb-4"
+          className="text-center text-xl md:text-3xl text-white mb-4"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
-          Customer Reviews
+       
         </h2>
 
         <p
