@@ -42,7 +42,7 @@ const Hero = () => {
       
       {/* Hero Image (centered) */}
       <motion.img
-        src="./dp.png"
+        src="./heroimage.png"
       
         alt="hero"
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
