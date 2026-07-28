@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin6Fill, RiTextSpacing } from "react-icons/ri";
 import { FaStar } from "react-icons/fa";
+import { FaShareAlt } from "react-icons/fa";
 
 
 const ViewArtDetails = () => {
@@ -117,6 +118,34 @@ const handleReviewSubmit = async () => {
     });
     
   }
+
+  const handleShare = async () => {
+  const shareUrl = window.location.href;
+
+  try {
+    if (navigator.share) {
+      await navigator.share({
+        title: Data.type,
+        text: `Check out this artwork on TheAffinityArts`,
+        url: shareUrl,
+      });
+    } else {
+      await navigator.clipboard.writeText(shareUrl);
+
+      Swal.fire({
+        icon: "success",
+        title: "Link copied!",
+        text: "Share it anywhere.",
+        toast: true,
+        position: "top-end",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   const handleFileChange = (e) => {
   setFiles([...e.target.files]);
@@ -248,11 +277,27 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
 />
 {/* text-[#e1786d]  */}
 
+{isLoggedIn === true && role === "user" && (
+  <div className="flex flex-row lg:flex-col mt-4 items-center gap-3 lg:gap-4 px-3">
 
-       {isLoggedIn === true && role === "user" &&  (<div className='flex flex-row lg:flex-col mt-4 items-center justify-between lg:justify-start mt-4 lg:mt-1 px-3'>
-          <button className='bg-white rounded-full lg:rounded-full text-s p-3 -ml-3 lg:ml-1  lg:mr-1 text-[#e1786d] flex items-center justify-center' onClick={handleFav}><FaHeart /><span className='ms-0  block lg:hidden'></span></button>
-          {/* <button className='text-[#d9a441]  bg-white rounded-full lg:rounded-full text-s p-3 mt-0 -mr-3 lg:ml-1 lg:mr-1 lg:mt-4 text-blue-500 flex items-center justify-center' onClick={handleCart}><MdShoppingCart /><span className='ms-0 block lg:hidden'></span></button> */}
-          </div>)}
+    <button
+      className="bg-white rounded-full p-3 text-[#e1786d] flex items-center justify-center shadow-md hover:scale-110 transition"
+      onClick={handleFav}
+      title="Add to Wishlist"
+    >
+      <FaHeart />
+    </button>
+
+    <button
+      className="bg-white rounded-full p-3 text-[#661638] flex items-center justify-center shadow-md hover:scale-110 transition"
+      onClick={handleShare}
+      title="Share Product"
+    >
+      <FaShareAlt />
+    </button>
+
+  </div>
+)}
 
           {isLoggedIn === true && role === "admin" &&  (<div className='flex flex-row lg:flex-col mt-4 items-center justify-between lg:justify-start mt-4 lg:mt-1 px-3'>
           <Link to={`/updateArt/${id}`}  className='bg-white text-lime-500 rounded lg:rounded-full text-l p-3 -ml-3 lg:ml-1  lg:mr-1 text-red-600 flex items-center justify-center'>
@@ -375,25 +420,6 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
 
 
 {/* done  */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
