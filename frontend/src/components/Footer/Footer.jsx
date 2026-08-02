@@ -81,7 +81,7 @@ const Footer = () => {
        
 
          <a
-  href="https://wa.me/918854913366?text=Hi%20I%20am%20interested%20in%20ordering%20something%20from%20The%20Affinity"
+  href="https://wa.me/918854913366?text=Hi%20I%20am%20interested%20in%20ordering%20something%20from%20theaffinityarts"
   target="_blank"
   rel="noopener noreferrer"
   className="flex items-center gap-2 hover:text-soft-glow transition duration-300 mt-2"
