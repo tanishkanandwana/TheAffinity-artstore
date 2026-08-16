@@ -5,10 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const categories = [
-   { title: "Rakhi", img: "rakhi.jpg",  badge: "New" },
+   { title: "Rakhi", img: "rakhi.jpg",  badge: "Popular" },
   //  { title: "Diwali", img: "diwali.jpg" },
       // { title: "Birthday", img: "bday.jpg" },
-       { title: "Customised-Gifts", img: "hampers.jpg", badge: "Popular"  },
+       { title: "Customised-Gifts", img: "hampers.jpg" },
        { title: "Keychains", img: "Keychain.jpg" },
     
  { title: "Frames", img: "frames.jpg" },
