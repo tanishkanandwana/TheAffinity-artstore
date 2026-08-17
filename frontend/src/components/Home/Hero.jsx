@@ -41,7 +41,7 @@ const Hero = () => {
     <div className="relative w-screen h-screen overflow-hidden flex items-center justify-center">
       
       {/* Hero Image (centered) */}
-      <motion.img
+      {/* <motion.img
         src="./heroimage.jpg"
       
         alt="hero"
@@ -50,7 +50,25 @@ const Hero = () => {
         initial={{ scale: 1.2, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }} 
         transition={{ duration: 1 }}
-      /> 
+      />  */}
+
+      {/* Responsive Hero Image */}
+<picture className="absolute inset-0 w-full h-full z-0">
+  <source
+    media="(max-width: 767px)"
+    srcSet="./heroimage-mobile.png"
+  />
+
+  <motion.img
+    src="./heroimage.jpg"
+    alt="The Affinity Arts"
+    className="absolute inset-0 w-full h-full object-cover opacity-80"
+
+    initial={{ scale: 1.2, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ duration: 1 }}
+  />
+</picture>
            {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src="/BTS.mp4"
