@@ -53,7 +53,7 @@ const Hero = () => {
       />  */}
 
       {/* Responsive Hero Image */}
-<picture className="absolute inset-0 w-full h-full z-0">
+{/* <picture className="absolute inset-0 w-full h-full z-0">
   <source
     media="(max-width: 767px)"
     srcSet="./heroimage-mobile.png"
@@ -68,7 +68,26 @@ const Hero = () => {
     animate={{ scale: 1, opacity: 1 }}
     transition={{ duration: 1 }}
   />
-</picture>
+</picture> */}
+{/* Desktop Hero Image */}
+<motion.img
+  src="./heroimage.jpg"
+  alt="The Affinity Arts"
+  className="hidden md:block absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+  initial={{ scale: 1.2, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 1 }}
+/>
+
+{/* Mobile Hero Video */}
+<video
+  className="md:hidden absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+  src="./download.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+/>
            {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src="/BTS.mp4"
