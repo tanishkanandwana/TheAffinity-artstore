@@ -118,7 +118,7 @@ const Footer = () => {
         className="text-[10px] font-semibold text-center"
         style={{ fontFamily: "'Cinzel Decorative', cursive" }}
       >
-        &copy; 2025 THEAFFINITYARTS | 2024
+        &copy;  THEAFFINITYARTS | 2025
       </h1>
     </div>
   );
