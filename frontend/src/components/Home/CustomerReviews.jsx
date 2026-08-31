@@ -6,61 +6,61 @@ const memories = [
     image: "review6.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Aayushi"
+    desc: ""
   },
   {
     image: "review10.jpg",
      clientName: "",
     title: "",
-    desc: "Mr.Utkarsh"
+    desc: ""
   },
   {
     image: "review2.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Jiya"
+    desc: ""
   },
   {
     image: "review3.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Urvashi"
+    desc: ""
   },
   {
     image: "review8.jpg",
      clientName: "",
     title: "",
-    desc: "Mr. Tirth"
+    desc: ""
   },
   {
     image: "review4.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Dhanvi"
+    desc: ""
   },
   {
     image: "review5.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Srishti"
+    desc: ""
   },
   {
     image: "review1.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Swasti"
+    desc: ""
   },
   {
     image: "review7.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Riya"
+    desc: ""
   },
   {
     image: "review8.jpg",
      clientName: "",
     title: "",
-    desc: "Miss. Nisha"
+    desc: ""
   }
 
 ];
