@@ -9,7 +9,35 @@ import CustomerReviews from '../components/Home/CustomerReviews';
 const Home = () => {
   return (
     <div className="bg-white  text-white"style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-      <Hero />
+      {/* Announcement / Promotional Strip */}
+<div
+  className="
+    w-full
+    h-9 sm:h-10
+      bg-[#F8F4F0]
+  text-black
+    flex items-center justify-center
+    text-center
+    px-3
+    overflow-hidden
+  "
+>
+  <p
+    className="
+      text-[10px]
+      sm:text-xs
+      md:text-sm
+      font-semibold
+      tracking-wide
+      whitespace-nowrap
+    "
+  >
+    ✦ DIWALI COLLECTION DROPPING SOON ✦
+  </p>
+</div>
+
+<Hero />
+      {/* <Hero /> */}
 
         <div className="px-10 py-8"></div>
 <CarouselCategories />
