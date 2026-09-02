@@ -11,13 +11,13 @@ const categories = [
        { title: "Customised-Gifts", img: "hampers.jpg" },
        { title: "Diwali", img: "rakhi.jpg", img: "diwalii.jpg",  badge: "Dropping soon"},
        { title: "Keychains", img: "Keychain.jpg" },
-    
+    { title: "Decor Essentials", img: "decor.jpg" },
  { title: "Frames", img: "frames.jpg" },
  { title: "Rakhi", img: "rakhi.jpg" },
 
       { title: "Resin", img: "resin.jpg" },
       //  { title: "phone-cases", img: "phonecase.jpg" },
-        { title: "Decor Essentials", img: "decor.jpg", badge: "Coming soon" },
+        
     { title: "Bouquets", img: "bouquet.jpg" },
     { title: "Crochet", img: "crochet.jpg" },
   { title: "Paintings", img: "polaroid.jpg" },
