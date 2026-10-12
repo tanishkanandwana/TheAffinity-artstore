@@ -56,7 +56,7 @@ const Hero = () => {
 <picture className="absolute inset-0 w-full h-full z-0">
   <source
     media="(max-width: 767px)"
-    srcSet="./heroimage-mobile.png"
+    srcSet="./diwali.png"
   />
 
   <motion.img

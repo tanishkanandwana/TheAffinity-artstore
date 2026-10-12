@@ -14,8 +14,8 @@ const Home = () => {
   className="
     w-full
     h-9 sm:h-10
-      bg-[#F8F4F0]
-  text-black
+      bg-[#8B681B]
+  text-[#E5C46A]
     flex items-center justify-center
     text-center
     px-3
@@ -32,7 +32,7 @@ const Home = () => {
       whitespace-nowrap
     "
   >
-    ✦ DIWALI COLLECTION DROPPING SOON ✦
+    ✦ Diwali Gifting is here, Orders are now open!✦
   </p>
 </div>
 
