@@ -111,7 +111,7 @@ const settings = {
   <span
     className="
       absolute top-1 right-1 z-20
-      bg-[#D4A017] text-white
+      bg-[#8B681B] text-[#E5C46A]
       text-[9px] sm:text-[10px]
       px-2 py-1 rounded-full
       font-bold shadow-md
