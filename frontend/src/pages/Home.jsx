@@ -65,6 +65,7 @@ import RecentlyAdded from '../components/Home/RecentlyAdded';
 import Newsletter from '../components/Home/Newsletter';
 import CarouselCategories from '../components/CarouselCategories';
 import SpecialMemories from '../components/Home/SpecialMemories';
+import AboutUs from '../components/Home/AboutUs';
 import CustomerReviews from '../components/Home/CustomerReviews';
 
 const Home = () => {
@@ -114,8 +115,10 @@ const Home = () => {
       <div className="order-4">
         <RecentlyAdded />
         <SpecialMemories />
-        <Newsletter />
+     <AboutUs />
         <CustomerReviews />
+
+           <Newsletter />
       </div>
     </div>
   );
