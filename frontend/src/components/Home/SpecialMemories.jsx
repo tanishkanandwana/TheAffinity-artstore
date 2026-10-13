@@ -28,12 +28,28 @@ const memories = [
     desc: ""
   },
    {
+    image: "memories12.jpg",
+    title: "",
+    desc: ""
+  },
+     {
+    image: "memories9.jpg",
+    title: "",
+    desc: ""
+  },
+
+   {
     image: "memories7.jpg",
     title: "",
     desc: ""
   },
     {
     image: "memories8.jpg",
+    title: "",
+    desc: ""
+  },
+    {
+    image: "memories11.jpg",
     title: "",
     desc: ""
   }
