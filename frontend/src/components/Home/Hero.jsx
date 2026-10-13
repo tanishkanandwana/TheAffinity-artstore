@@ -169,8 +169,8 @@ drop-shadow-lg"
               rounded-full
               border-2
               border-transparent
-              bg-gradient-to-r from-[#a67364] via-transparent to-[#a67364]
-              hover:bg-gradient-to-r hover:from-[#6e433d] hover:via-transparent hover:to-[#6e433d]
+              bg-gradient-to-r from-[#661638] via-transparent to-[#661638]
+              hover:bg-gradient-to-r hover:from-[#4B001F] hover:via-transparent hover:to-[#4B001F]
               hover:text-white
               transition-all duration-600
               glow-text
@@ -193,7 +193,7 @@ drop-shadow-lg"
               border-2
               border-white
               bg-transparent
-              hover:bg-[#FDF8F6] hover:text-[#895a4f]
+              hover:bg-[#FDF8F6] hover:text-[#661638]
               transition-all duration-500
               glow-text
             "
