@@ -124,7 +124,7 @@ const settings = {
                 src={cat.img}
                 alt={cat.title}
                 // className="rounded-full w-28 h-28 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105 cursor-pointer"
-                className="  rounded-full w-12 h-12 sm:w-36 sm:h-36 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+                className="  rounded-full w-14 h-14 sm:w-36 sm:h-36 object-cover shadow-lg transition-transform duration-300 group-hover:scale-105 cursor-pointer"
               />
               {/* <p
                 className="mt-5 text-[#4B001F] font-semibold text-lg text-center"
