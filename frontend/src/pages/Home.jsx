@@ -77,8 +77,8 @@ const Home = () => {
       <div
         className="
           w-full h-9 sm:h-10
-          bg-[#FDF8F6]
-          text-[#4B001F]
+          bg-[#8B681B]
+          text-[#E5C46A]
           flex items-center justify-center
           text-center px-3 overflow-hidden
           relative z-30
