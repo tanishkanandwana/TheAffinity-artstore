@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="bg-white text-[#8A365C] px-8 py-10">
+    <div className="bg-[#520D2B] text-white px-8 py-10">
       {/* Brand Title & Tagline */}
       <div className="mb-2">
         <h1
-          className="text-xl font-semibold flex justify-end"
+          className="text-l font-semibold flex justify-end"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
           THEAFFINITYARTS
@@ -115,7 +115,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <h1
-        className="text-[10px] font-semibold text-center"
+        className="text-[12px] font-semibold text-center"
         style={{ fontFamily: "'Cinzel Decorative', cursive" }}
       >
         &copy;  THEAFFINITYARTS | 2025

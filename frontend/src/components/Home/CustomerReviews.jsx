@@ -67,20 +67,20 @@ const memories = [
 
 const CustomerReviews = () => {
   return (
-    <div className="relative py-20 overflow-hidden">
+    <div className="relative py-20 overflow-hidden bg-transparent">
 
       {/* Background Video */}    
-      <video
+      {/* <video
         className="absolute inset-0 w-full h-full object-cover"
         src="/gift-wrapping-woman-tie-a-white-ribbon-bow.mp4"
         autoPlay
         muted
         loop
         playsInline
-      />
+      /> */}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/55" />
+      {/* <div className="absolute inset-0 bg-black/55" /> */}
 
       <div className="relative z-10">
 

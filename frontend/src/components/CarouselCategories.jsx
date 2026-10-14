@@ -95,10 +95,10 @@ const settings = {
   return (
     <div className="px-3 sm:px-4 md:px-8 mt-2 md:mt-16 z-20 relative bg-transparent">
      <h2
-  className="hidden md:block text-2xl text-center text-[#4B001F] font-semibold mb-10"
+  className="hidden md:block text-xl text-center text-[#4B001F] font-semibold mb-10"
   style={{ fontFamily: "'Cinzel Decorative', cursive" }}
 >
-  DISCOVER OUR WORLD
+  What's your Mood?
 </h2>
       <Slider {...settings}>
         {categories.map((cat, i) => (
