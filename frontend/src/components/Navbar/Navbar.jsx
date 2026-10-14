@@ -148,14 +148,14 @@ useEffect(() => {
   initial={{ x: "-100%" }}
   animate={{ x: isMobileNavOpen ? 0 : "-100%" }}
   transition={{ duration: 0.4, ease: "easeInOut" }}
-  className="backdrop-blur-md bg-[#EFDAD4]/70 h-screen w-[70%] fixed top-0 left-0 z-40 flex flex-col justify-center items-center gap-8 rounded-r-2xl shadow-2xl"
+  className="backdrop-blur-md bg-transparent h-screen w-[70%] fixed top-0 left-0 z-40 flex flex-col justify-center items-center gap-1 rounded-r-2xl shadow-2xl"
 >
         {visibleLinks.map((item, i) => (
           <Link
             key={item.title || i}
             to={item.link}
             onClick={() => setIsMobileNavOpen(false)}
-            className="text-white text-2xl mb-8 font-semibold hover:text-[#DFB2A6] transition-all duration-300"
+            className="text-white text-l mb-8 font-semibold hover:text-[#DFB2A6] transition-all duration-300"
           >
             {item.title}
           </Link>
@@ -166,14 +166,14 @@ useEffect(() => {
             <Link
               to="/Login"
               onClick={() => setIsMobileNavOpen(false)}
-              className="px-8 py-2 mb-6 text-3xl font-semibold border border-white-500 rounded text-white hover:bg-[#DFB2A6] hover:text-white transition-all duration-600"
+              className="px-2 py-1 mb-6 text-sm font-semibold border border-white-500 rounded text-white hover:bg-[#DFB2A6] hover:text-white transition-all duration-600"
             >
               LogIn
             </Link>
             <Link
               to="/SignUp"
               onClick={() => setIsMobileNavOpen(false)}
-              className="px-8 py-2 mb-8 text-3xl font-semibold bg-white text-[#DEB9AF] rounded hover:bg-[#CFA39A] hover:text-white border border-white-500 transition-all duration-600"
+              className="px-2 py-1 mb-8 text-sm font-semibold bg-white text-[#DEB9AF] rounded hover:bg-[#CFA39A] hover:text-white border border-white-500 transition-all duration-600"
             >
               SignUp
             </Link>
