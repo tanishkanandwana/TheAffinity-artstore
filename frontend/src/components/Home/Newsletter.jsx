@@ -25,24 +25,24 @@ const Newsletter = () => {
   return (
     <div className="relative overflow-hidden rounded-lg">
       {/* Background video with soft brightness and saturation */}
-      <video
+      {/* <video
         className="absolute top-0 left-0 w-full h-full object-cover z-0 filter brightness-90 saturate-90"
         src="/daypainting.mp4"
         autoPlay
         loop
         muted
         playsInline
-      />
+      /> */}
 
       {/* Light pastel translucent overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-[#f7ebe7]/40 z-10 backdrop-blur-sm" />
 
       {/* Content */}
       <div className="relative z-20 py-10 px-4 text-center text-[#661638] max-w-xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-2">Stay Connected</h2>
-        <p className="mb-6">
+        <h2 className="text-xl font-semibold mb-2">JOIN OUR INNER CIRCLE</h2>
+        {/* <p className="mb-6">
           Subscribe to get updates on new collections, offers, and art stories.
-        </p>
+        </p> */}
 
         <form
           onSubmit={handleSubmit}

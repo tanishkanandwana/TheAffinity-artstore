@@ -76,17 +76,17 @@ const SpecialMemories = () => {
       <div className="relative z-10">
 
         <h2
-          className="text-center text-xl md:text-3xl text-white mb-4"
+          className="text-center text-l md:text-2xl text-white mb-4"
           style={{ fontFamily: "'Cinzel Decorative', cursive" }}
         >
-          Special Memories We've Created
+          Every shot tells a story
         </h2>
 
         <p
           className="text-center text-[#f5e6da] mb-12"
           style={{ fontFamily: "'Marcellus', serif" }}
         >
-          Every gift tells a story.
+          
         </p>
 
         {/* Sliding Cards */}

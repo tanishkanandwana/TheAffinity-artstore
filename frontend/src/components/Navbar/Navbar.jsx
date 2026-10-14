@@ -65,7 +65,7 @@ useEffect(() => {
 
   return (
     <>
-      <nav className="z-50 sticky top-0 shadow-md flex 	bg-[#661638] text-white pl-8 py-4 items-center justify-between h-16 text-l" style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+      <nav className="z-50 sticky top-0 shadow-md flex 	bg-[#F5E6DA] text-[#661638] pl-8 py-4 items-center justify-between h-16 text-l" style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
         {/* Desktop Links */}
         <div className="hidden md:flex gap-6 items-center">
           {visibleLinks.map((item, i) => (
@@ -94,7 +94,7 @@ useEffect(() => {
               <Link to="/Login" className="px-4 py-1 border border-white-500 rounded hover:bg-white hover:text-pink-800 transition-all duration-600">
                 LogIn
               </Link>
-              <Link to="/SignUp" className="px-4 py-1 bg-white text-pink-800 rounded hover:bg-pink-800 hover:text-white border border-white-500 transition-all duration-600">
+              <Link to="/SignUp" className="px-4 py-1 bg-white text-pink-800 rounded hover:bg-[#661638] hover:text-white border border-white-500 transition-all duration-600">
                 SignUp
               </Link>
             </div>
@@ -135,7 +135,7 @@ useEffect(() => {
 
   <Link to="/">
     <img
-      src="/mylogo.png"
+      src="/favicon.png"
       alt="logo"
       className="h-14 mb-2 relative top-1 object-contain rounded"
     />
