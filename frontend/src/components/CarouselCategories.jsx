@@ -9,14 +9,14 @@ const categories = [
   //  { title: "Diwali", img: "diwali.jpg" },
       // { title: "Birthday", img: "bday.jpg" },
       
-       { title: "Diwali", img: "diwalii.jpg",  badge: "Popular"},
-        { title: "Customised-Gifts", img: "hampers.jpg" },
+       { title: "Diwali-Special", img: "DIWALII.png",  badge: "Popular"},
+        { title: "Customised-Gifts", img: "magazine.jpg" },
        { title: "Keychains", img: "Keychain.jpg" },
-    { title: "Decor Essentials", img: "decor.jpg" },
+    { title: "Decor Essentials", img: "yellow.jpg" },
  { title: "Frames", img: "frames.jpg" },
  
 
-      { title: "Resin", img: "resin.jpg" },
+      { title: "Resin", img: "RESINN.jpeg" },
       //  { title: "phone-cases", img: "phonecase.jpg" },
         
     { title: "Bouquets", img: "bouquet.jpg" },
