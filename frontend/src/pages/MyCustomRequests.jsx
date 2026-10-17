@@ -29,7 +29,7 @@ const MyCustomRequests = () => {
   return (
     <div className="p-6">
 
-      <h1 className="text-3xl mb-6">
+      <h1 className="text-xl text-[#661638] text-center h-screen">
         My Custom Requests
       </h1>
 

@@ -47,7 +47,7 @@ const Settings = () => {
   {!ProfileData && <div className='w-full h-[100%] flex items-center justify-center'><Loader /></div>}{" "}
   {ProfileData && (
     <div className='h-[100%] p-0 md:p-4 text-white'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
-      <h1 className='text-3xl md:text-4xl font-semibold text-[#4B001F] mb-6'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
+      <h1 className='text-2xl md:text-4xl font-semibold text-[#4B001F] mb-6'style={{ fontFamily: "'Cinzel Decorative', cursive" }}>
         Settings
       </h1>
     

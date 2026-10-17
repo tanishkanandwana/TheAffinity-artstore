@@ -355,9 +355,9 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
 
 {/* RATING DISPLAY SECTION */}
 <div className="mt-8">
-  <h3 className="text-[#4B001F] text-l font-semibold mb-1"  style={{ fontFamily: "'Marcellus', serif" }}>Our Customer Reviews</h3>
+  {/* <h3 className="text-[#4B001F] text-l font-semibold mb-1"  style={{ fontFamily: "'Marcellus', serif" }}>Our Customer Reviews</h3>
   
-  {reviews.length === 0 && <p className="text-zinc-400 italic"  style={{ fontFamily: "'Marcellus', serif" }}>No reviews yet.</p>}
+  {reviews.length === 0 && <p className="text-zinc-400 italic"  style={{ fontFamily: "'Marcellus', serif" }}>No reviews yet.</p>} */}
   
   {reviews.map((rev, index) => (
     <div key={index} className="mb-4 bg-pink-800 p-3 rounded shadow text-white">
@@ -399,6 +399,9 @@ className="h-[40vh] md:h-[70vh] lg:h-[70vh] rounded-lg border border-zinc-400 sh
     >
       Submit Review
     </button>
+    <h3 className="text-[#4B001F] text-l font-semibold mt-4 mb-1"  style={{ fontFamily: "'Marcellus', serif" }}></h3>
+  
+  {reviews.length === 0 && <p className="text-zinc-400 italic"  style={{ fontFamily: "'Marcellus', serif" }}></p>}
   </div>
 )}
 
