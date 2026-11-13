@@ -75,7 +75,7 @@ const Home = () => {
       style={{ fontFamily: "'Cinzel Decorative', cursive" }}
     >
       {/* Announcement Strip */}
-      <div
+      {/* <div
         className="
           w-full h-9 sm:h-10
           bg-[#661638]
@@ -86,9 +86,9 @@ const Home = () => {
         "
       >
         <p className="text-[10px] sm:text-xs md:text-sm font-semibold tracking-wide whitespace-nowrap">
-          ✦ Diwali Gifting is here, Orders are now open! ✦
+        
         </p>
-      </div>
+      </div> */}
 
       {/* MOBILE: Hero image with categories overlaid on top */}
       <div className="relative md:hidden">
