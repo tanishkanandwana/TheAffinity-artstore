@@ -9,8 +9,8 @@ const categories = [
   //  { title: "Diwali", img: "diwali.jpg" },
       // { title: "Birthday", img: "bday.jpg" },
       
-       { title: "Diwali-Special", img: "DIWALII.png",  badge: "Popular"},
-        { title: "Customised-Gifts", img: "magazine.jpg" },
+       
+        { title: "Customised-Gifts", img: "magazine.jpg", badge: "Trending" },
        { title: "Keychains", img: "Keychain.jpg" },
     { title: "Decor Essentials", img: "yellow.jpg" },
  { title: "Frames", img: "frames.jpg" },
@@ -24,6 +24,7 @@ const categories = [
     
   { title: "Paintings", img: "polaroid.jpg" },
   { title: "Rakhi", img: "rakhi.jpg" },
+  { title: "Diwali-Special", img: "DIWALII.png" },
   { title: "Bookmarks", img: "bookmark.jpg" },
   
   
